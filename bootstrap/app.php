@@ -13,6 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->web(append: [
             \App\Http\Middleware\CachePublicPages::class,
+            \App\Http\Middleware\OptimizeMediaLoading::class,
         ]);
 
         $middleware->validateCsrfTokens(except: [

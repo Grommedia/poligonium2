@@ -44,6 +44,10 @@ for pass in 1 2; do
 done
 
 echo
+echo "== Optimization headers =="
+curl -I -L -s "https://poligonium.com/vfx-showreel" | grep -i "x-poligonium" || true
+
+echo
 echo "== Recent Laravel errors =="
 latest_log="$(ls -1t storage/logs/laravel-*.log 2>/dev/null | head -n 1 || true)"
 if [ -n "$latest_log" ]; then

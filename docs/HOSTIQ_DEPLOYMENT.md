@@ -191,6 +191,7 @@ bash tools/hostiq-diagnose.sh
 - Missing media files must not produce repeated Laravel exceptions in `storage/logs`.
 - Public guest pages can use the safe HTML cache controlled by `POLIGONIUM_PUBLIC_PAGE_CACHE=true`.
 - The public page cache intentionally skips admin, school cabinet, login/register, POST routes, JSON/AJAX routes, and pages containing forms or CSRF tokens.
+- Public media markup is optimized automatically when `POLIGONIUM_OPTIMIZE_MEDIA_LOADING=true`: early images load eagerly, lower images load lazily, iframes are lazy, and videos preload metadata only.
 - Do not run `npm run build` on shared hosting unless it is absolutely necessary; build frontend assets locally and deploy the result.
 
 ## Smoke Test
