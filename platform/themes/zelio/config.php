@@ -9,7 +9,7 @@ return [
 
     'events' => [
         'beforeRenderTheme' => function (Theme $theme): void {
-            $version = get_cms_version() . '.22';
+            $version = get_cms_version() . '.24';
 
             $themeMode = theme_option('default_theme_color_mode', 'light');
 

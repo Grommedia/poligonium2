@@ -1058,12 +1058,50 @@ html[data-bs-theme="dark"] .poligonium-pipeline-popover li {
 @media (max-width: 575.98px) {
     .poligonium-services-wrap {
         width: min(100% - 24px, 1320px);
-        padding-top: 86px;
-        padding-bottom: 60px;
+        padding-top: 72px;
+        padding-bottom: 38px;
     }
 
     .poligonium-services-hero {
         min-height: 0;
+        gap: 18px;
+        padding-bottom: 22px;
+    }
+
+    .poligonium-services-kicker {
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .poligonium-services-title {
+        font-size: clamp(36px, 11vw, 48px);
+        line-height: 1;
+    }
+
+    .poligonium-services-lead {
+        margin-top: 14px;
+        font-size: 15px;
+        line-height: 1.52;
+    }
+
+    .poligonium-services-side {
+        gap: 12px;
+    }
+
+    .poligonium-services-hero-note {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .poligonium-services-hero-note strong {
+        max-width: none;
+        font-size: 22px;
+    }
+
+    .poligonium-services-hero-note p {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 1.48;
     }
 
     .poligonium-services-orbit,
@@ -1074,10 +1112,92 @@ html[data-bs-theme="dark"] .poligonium-pipeline-popover li {
     .poligonium-offer-grid,
     .poligonium-process-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .poligonium-service-tablist {
+        gap: 10px;
+    }
+
+    .poligonium-service-tab {
+        min-height: 0;
+        padding: 14px 16px;
+        border-radius: 12px;
+    }
+
+    .poligonium-service-tab::before {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+    }
+
+    .poligonium-service-tab strong {
+        max-width: calc(100% - 54px);
+        margin-top: 10px;
+        font-size: 21px;
+    }
+
+    .poligonium-service-tab span {
+        max-width: 100%;
+        margin-top: 6px;
+        font-size: 14px;
+        line-height: 1.35;
     }
 
     .poligonium-service-panel {
-        padding: 18px;
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .poligonium-service-panel::after {
+        display: none;
+    }
+
+    .poligonium-panel-head {
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .poligonium-panel-head h2 {
+        font-size: clamp(28px, 9vw, 38px);
+    }
+
+    .poligonium-panel-head p,
+    .poligonium-price-card p,
+    .poligonium-process-card p,
+    .poligonium-note-card p {
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .poligonium-price-card,
+    .poligonium-process-card,
+    .poligonium-note-card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .poligonium-price-card h3,
+    .poligonium-process-card h3,
+    .poligonium-note-card h3 {
+        margin-top: 10px;
+        font-size: 21px;
+    }
+
+    .poligonium-price-card ul,
+    .poligonium-process-card ul {
+        margin-top: 10px;
+    }
+
+    .poligonium-services-cta {
+        gap: 12px;
+        margin-top: 16px;
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .poligonium-services-cta h2 {
+        font-size: 26px;
     }
 }
 

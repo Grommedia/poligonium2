@@ -226,8 +226,51 @@
         }
 
         @media (max-width: 575px) {
+            .poligonium-site-footer__wrap {
+                width: min(100% - 24px, 760px);
+                padding: 18px 0 12px;
+            }
+
+            .poligonium-site-footer__grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+                padding-bottom: 14px;
+            }
+
+            .poligonium-site-footer__grid address {
+                grid-column: 1 / -1;
+            }
+
+            .poligonium-site-footer__title {
+                margin-bottom: 9px;
+                font-size: .76rem;
+            }
+
+            .poligonium-site-footer__links,
+            .poligonium-site-footer__directions,
+            .poligonium-site-footer__contacts {
+                gap: 6px;
+            }
+
+            .poligonium-site-footer__links a,
+            .poligonium-site-footer__directions li,
+            .poligonium-site-footer__contacts li {
+                font-size: .86rem;
+                line-height: 1.35;
+            }
+
+            .poligonium-site-footer__contact-label {
+                font-size: .68rem;
+            }
+
             .poligonium-site-footer__bottom {
                 font-size: .82rem;
+                gap: 6px;
+                padding-top: 12px;
+            }
+
+            .poligonium-site-footer::after {
+                display: none;
             }
         }
     </style>

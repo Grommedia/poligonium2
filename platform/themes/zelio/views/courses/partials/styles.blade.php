@@ -1083,17 +1083,108 @@
     @media (max-width: 575.98px) {
         .poligonium-courses-wrap {
             width: min(100% - 24px, 1280px);
-            padding-top: 90px;
+            padding-top: 72px;
+            padding-bottom: 46px;
+        }
+
+        .poligonium-courses-hero {
+            gap: 14px;
+        }
+
+        .poligonium-courses-catalog {
+            max-width: none;
+            padding: 16px;
+            border-radius: 12px;
+        }
+
+        .poligonium-course-grid {
+            gap: 18px;
+            margin-top: 26px;
         }
 
         .poligonium-courses-hero h1,
         .poligonium-course-detail h1,
         .poligonium-lesson-main h1 {
-            font-size: 52px;
+            font-size: clamp(36px, 11vw, 46px);
+            line-height: 1;
+        }
+
+        .poligonium-courses-hero p,
+        .poligonium-course-detail p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .poligonium-course-card {
+            border-radius: 8px;
         }
 
         .poligonium-course-media {
-            min-height: 220px;
+            min-height: 190px;
+        }
+
+        .poligonium-course-media img {
+            min-height: 190px;
+        }
+
+        .poligonium-course-body {
+            padding: 16px;
+        }
+
+        .poligonium-course-title {
+            margin: 12px 0 8px;
+            font-size: 25px;
+        }
+
+        .poligonium-course-description {
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        .poligonium-course-meta,
+        .poligonium-course-bottom,
+        .poligonium-course-stats,
+        .poligonium-course-tags {
+            gap: 7px;
+        }
+
+        .poligonium-course-meta span,
+        .poligonium-course-stats span,
+        .poligonium-course-bottom strong {
+            padding: 6px 9px;
+            font-size: 12px;
+        }
+
+        .poligonium-course-bottom {
+            padding-top: 14px;
+        }
+
+        .poligonium-course-release-badge {
+            top: 108px;
+            right: -8px;
+            width: 132px;
+        }
+
+        .poligonium-course-release-badge::before {
+            inset: 10px;
+        }
+
+        .poligonium-course-release-badge small {
+            max-width: 92px;
+            font-size: 10px;
+        }
+
+        .poligonium-course-release-badge strong {
+            font-size: 40px;
+        }
+
+        .poligonium-course-release-badge__days,
+        .poligonium-course-release-badge em {
+            font-size: 10px;
+        }
+
+        .poligonium-course-card-glow {
+            display: none;
         }
 
         .poligonium-course-release-modal__dialog {

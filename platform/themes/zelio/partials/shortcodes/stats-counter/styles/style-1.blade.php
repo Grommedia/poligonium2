@@ -254,11 +254,11 @@
 
         @media (max-width: 767px) {
             .poligonium-proof-board {
-                padding: 38px 0;
+                padding: 28px 0;
             }
 
             .poligonium-proof-board__wrap {
-                width: min(100% - 28px, 680px);
+                width: min(100% - 24px, 680px);
             }
 
             .poligonium-proof-board__head,
@@ -266,8 +266,57 @@
                 grid-template-columns: 1fr;
             }
 
+            .poligonium-proof-board__head {
+                gap: 10px;
+                margin-bottom: 14px;
+            }
+
+            .poligonium-proof-board__kicker {
+                margin-bottom: 8px;
+                font-size: .7rem;
+            }
+
+            .poligonium-proof-board__title {
+                font-size: clamp(1.55rem, 8vw, 2.18rem);
+                line-height: 1.06;
+            }
+
+            .poligonium-proof-board__subtitle {
+                font-size: .9rem;
+                line-height: 1.42;
+            }
+
+            .poligonium-proof-board__grid {
+                gap: 10px;
+            }
+
             .poligonium-proof-card {
                 min-height: auto;
+                padding: 13px;
+            }
+
+            .poligonium-proof-card__icon {
+                width: 36px;
+                margin-bottom: 10px;
+                box-shadow: 4px 4px 0 rgba(238, 112, 18, .16);
+            }
+
+            .poligonium-proof-card__icon i {
+                font-size: 1.08rem;
+            }
+
+            .poligonium-proof-card h3 {
+                margin-bottom: 7px;
+                font-size: 1rem;
+            }
+
+            .poligonium-proof-card p {
+                font-size: .84rem;
+                line-height: 1.38;
+            }
+
+            .poligonium-proof-board::after {
+                display: none;
             }
         }
     </style>

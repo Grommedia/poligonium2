@@ -783,27 +783,55 @@
     @media (max-width: 767px) {
         .poligonium-portfolio-wrap {
             width: min(100% - 24px, 1320px);
-            padding-top: 16px;
-            padding-bottom: 72px;
+            padding-top: 10px;
+            padding-bottom: 40px;
+        }
+
+        .pb-150.container:has(> .ck-content > .poligonium-portfolio-board) {
+            padding-bottom: 42px !important;
         }
 
         .poligonium-portfolio-board__orbit {
             display: none;
         }
 
+        .poligonium-portfolio-board__head {
+            gap: 12px;
+            margin-bottom: 18px;
+            padding: 10px 0;
+        }
+
+        .poligonium-portfolio-board__title span {
+            font-size: clamp(30px, 11vw, 44px);
+        }
+
         .poligonium-portfolio-filters {
             gap: 8px;
         }
 
+        .poligonium-portfolio-filters button {
+            min-height: 34px;
+            padding: 7px 10px;
+            font-size: 12px;
+        }
+
+        .poligonium-portfolio-list {
+            gap: 34px;
+        }
+
         .poligonium-portfolio-card__inner {
             min-height: 0;
-            padding: 50px 18px 18px;
+            padding: 38px 14px 14px;
         }
 
         .poligonium-portfolio-card__portrait {
-            right: 0;
-            top: -42px;
-            width: min(165px, 52%);
+            right: -2px;
+            top: -34px;
+            width: min(140px, 46%);
+        }
+
+        .poligonium-portfolio-card__corners {
+            inset: 12px;
         }
 
         .poligonium-portfolio-card__content,
@@ -813,15 +841,55 @@
 
         .poligonium-portfolio-card__content {
             min-height: 0;
-            padding-top: 132px;
+            gap: 12px;
+            padding-top: 96px;
         }
 
         .poligonium-portfolio-card__copy h3 {
-            font-size: 31px;
+            font-size: 27px;
         }
 
         .poligonium-portfolio-card__copy p {
-            font-size: 16px;
+            margin-top: 11px;
+            padding-top: 10px;
+            font-size: 14px;
+            line-height: 1.38;
+        }
+
+        .poligonium-portfolio-card__tools {
+            gap: 6px;
+        }
+
+        .poligonium-portfolio-tool {
+            min-height: 30px;
+            padding: 0 9px;
+            font-size: 10px;
+        }
+
+        .poligonium-portfolio-tool b,
+        .poligonium-portfolio-tool img {
+            width: 22px;
+            height: 22px;
+            flex-basis: 22px;
+        }
+
+        .poligonium-portfolio-card__meta {
+            gap: 7px;
+            margin-top: 12px;
+            padding: 8px 10px;
+        }
+
+        .poligonium-portfolio-card__meta span {
+            grid-template-columns: 20px 1fr;
+            font-size: 11px;
+        }
+
+        .poligonium-portfolio-card__meta i {
+            font-size: 18px;
+        }
+
+        .poligonium-portfolio-board__bottom {
+            margin-top: 30px;
         }
     }
 

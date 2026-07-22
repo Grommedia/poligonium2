@@ -831,28 +831,119 @@
 
     @media (max-width: 575px) {
         .poligonium-project-detail {
-            padding-top: 110px;
+            padding-top: 82px;
+            padding-bottom: 42px;
+        }
+
+        .poligonium-project-detail .container {
+            width: min(100% - 24px, 1140px);
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .poligonium-project-detail__back {
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
+
+        .poligonium-project-hero {
+            padding: 46px 18px 18px;
+            border-radius: 8px;
         }
 
         .poligonium-project-hero__portrait {
-            width: min(210px, 66vw);
-            top: -46px;
+            width: min(160px, 52vw);
+            top: -34px;
+        }
+
+        .poligonium-project-hero__corners {
+            inset: 12px;
+        }
+
+        .poligonium-project-hero__label {
+            min-height: 34px;
+            padding: 0 12px;
+            font-size: 12px;
+        }
+
+        .poligonium-project-hero__layout {
+            gap: 16px;
+            padding-top: 86px;
         }
 
         .poligonium-project-hero h1 {
-            font-size: 46px;
+            font-size: 34px;
+            line-height: .95;
+        }
+
+        .poligonium-project-hero strong {
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        .poligonium-project-hero p {
+            margin-top: 12px;
+            padding-top: 10px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .poligonium-project-hero__tools > div {
+            font-size: 12px;
+        }
+
+        .poligonium-project-hero__tools span {
+            min-height: 36px;
+            padding: 0 10px;
+            font-size: 12px;
+        }
+
+        .poligonium-project-hero__meta {
+            gap: 8px;
+            margin-top: 14px;
+            padding: 10px;
+        }
+
+        .poligonium-project-hero__meta span {
+            grid-template-columns: 30px 1fr;
+            font-size: 12px;
+        }
+
+        .poligonium-project-hero__meta i {
+            font-size: 22px;
         }
 
         .poligonium-project-content {
-            padding: 24px;
+            margin-top: 20px;
+            padding: 18px;
+            font-size: 15px;
+            line-height: 1.55;
         }
 
         .poligonium-project-presentation {
-            padding: 16px;
+            margin-top: 18px;
+            padding: 14px;
+        }
+
+        .poligonium-project-presentation__copy {
+            margin-bottom: 12px;
+        }
+
+        .poligonium-project-presentation__copy span {
+            font-size: 14px;
         }
 
         .poligonium-project-presentation__cards {
-            gap: 12px;
+            gap: 10px;
+        }
+
+        .poligonium-project-presentation-card {
+            padding: 7px;
+        }
+
+        .poligonium-project-share {
+            margin-top: 18px;
+            padding: 16px;
         }
 
         .poligonium-project-modal {
