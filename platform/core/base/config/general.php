@@ -4,7 +4,7 @@ return [
     'admin_dir' => env('ADMIN_DIR', 'admin'),
     'base_name' => env('APP_NAME', 'Botble Technologies'),
     'logo' => '/vendor/core/core/base/images/logo.png',
-    'favicon' => '/vendor/core/core/base/images/favicon.png',
+    'favicon' => '/favicon.png',
     'editor' => [
         'ckeditor' => [
             'js' => [

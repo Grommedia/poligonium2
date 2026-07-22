@@ -1,15 +1,20 @@
 {!! SeoHelper::render() !!}
 
-@if ($favicon = theme_option('favicon'))
-    @php
+@php
+    $favicon = theme_option('favicon');
+    $faviconUrl = $favicon ? RvMedia::getImageUrl($favicon) : asset('favicon.png');
+    $faviconMimeType = 'image/png';
+
+    if ($favicon) {
         $faviconPath = RvMedia::getRealPath($favicon);
         $faviconMimeType = $faviconPath && File::exists($faviconPath)
-            ? rescue(fn () => File::mimeType($faviconPath), 'image/x-icon', report: false)
-            : 'image/x-icon';
-    @endphp
+            ? rescue(fn () => File::mimeType($faviconPath), 'image/png', report: false)
+            : 'image/png';
+    }
+@endphp
 
-    {{ Html::favicon(RvMedia::getImageUrl($favicon), ['type' => $faviconMimeType]) }}
-@endif
+<link rel="icon" href="{{ $faviconUrl }}" type="{{ $faviconMimeType }}">
+<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
 @if (Theme::has('headerMeta'))
     {!! Theme::get('headerMeta') !!}
