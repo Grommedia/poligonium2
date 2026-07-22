@@ -174,6 +174,15 @@ To measure the server state before or after optimization:
 bash tools/hostiq-diagnose.sh
 ```
 
+If `/storage/...` files return `404`, restore uploaded media from the bundled
+storage archive parts:
+
+```bash
+bash tools/hostiq-restore-storage.sh
+bash tools/hostiq-optimize.sh
+bash tools/hostiq-diagnose.sh
+```
+
 ## Performance Checklist
 
 - `php artisan about` must show `Config CACHED`, `Routes CACHED`, and `Views CACHED`.

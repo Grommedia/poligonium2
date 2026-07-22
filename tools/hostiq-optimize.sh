@@ -6,7 +6,7 @@ cd "$(dirname "$0")/.."
 composer install --no-dev --optimize-autoloader
 
 php artisan migrate --force
-php artisan storage:link
+php artisan storage:link --force
 php artisan cms:publish:assets
 
 php artisan optimize:clear

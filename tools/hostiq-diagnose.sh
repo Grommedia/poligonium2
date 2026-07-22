@@ -18,6 +18,16 @@ else
     echo "public/storage is not a symlink"
 fi
 
+echo
+echo "== Media files on disk =="
+for file in "storage/app/public/main/i-am-4.png" "storage/app/public/main/fav.png" "public/storage/main/i-am-4.png" "public/storage/main/fav.png"; do
+    if [ -e "$file" ]; then
+        ls -la "$file"
+    else
+        echo "MISSING $file"
+    fi
+done
+
 for path in "storage/main/i-am-4.png" "storage/main/fav.png" "robots.txt" "sitemap.xml"; do
     echo
     echo "== https://poligonium.com/$path =="
