@@ -1,0 +1,11 @@
+{
+    "id": "poligonium/courses",
+    "name": "Courses",
+    "namespace": "Botble\\Courses\\",
+    "provider": "Botble\\Courses\\Providers\\CoursesServiceProvider",
+    "author": "Poligonium",
+    "url": "https://poligonium.com",
+    "version": "1.0.0",
+    "description": "Poligonium online courses and lesson access.",
+    "minimum_core_version": "7.3.0"
+}

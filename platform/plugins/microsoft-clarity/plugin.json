@@ -1,0 +1,11 @@
+{
+    "id": "poligonium/microsoft-clarity",
+    "name": "Microsoft Clarity",
+    "namespace": "Botble\\MicrosoftClarity\\",
+    "provider": "Botble\\MicrosoftClarity\\Providers\\MicrosoftClarityServiceProvider",
+    "author": "Poligonium",
+    "url": "https://poligonium.com",
+    "version": "1.0.0",
+    "description": "Microsoft Clarity integration for tracking, heatmaps, recordings and behavior analytics.",
+    "minimum_core_version": "7.3.0"
+}

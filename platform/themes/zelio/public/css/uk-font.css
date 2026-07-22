@@ -1,0 +1,48 @@
+html[lang="uk"] {
+    --primary-font: "Noto Sans", "Segoe UI", Arial, sans-serif;
+    --secondary-font: "Noto Sans", "Segoe UI", Arial, sans-serif;
+    --tc-body-font-family: "Noto Sans", "Segoe UI", Arial, sans-serif;
+    --tc-heading-font-family: "Noto Sans", "Segoe UI", Arial, sans-serif;
+    --tc-display-font-family: "Noto Sans", "Segoe UI", Arial, sans-serif;
+}
+
+html[lang="uk"] body,
+html[lang="uk"] button,
+html[lang="uk"] input,
+html[lang="uk"] select,
+html[lang="uk"] textarea {
+    font-family: "Noto Sans", "Segoe UI", Arial, sans-serif;
+}
+
+html[lang="uk"] .btn,
+html[lang="uk"] .h1,
+html[lang="uk"] .h2,
+html[lang="uk"] .h3,
+html[lang="uk"] .h4,
+html[lang="uk"] .h5,
+html[lang="uk"] .h6,
+html[lang="uk"] h1,
+html[lang="uk"] h2,
+html[lang="uk"] h3,
+html[lang="uk"] h4,
+html[lang="uk"] h5,
+html[lang="uk"] h6 {
+    font-family: "Noto Sans", "Segoe UI", Arial, sans-serif;
+    letter-spacing: 0;
+    line-height: 1.18;
+}
+
+html[lang="uk"] p,
+html[lang="uk"] .text-300 {
+    font-family: "Noto Sans", "Segoe UI", Arial, sans-serif;
+    line-height: 1.62;
+}
+
+html[lang="uk"] .section-hero-title {
+    font-weight: 700;
+}
+
+html[lang="uk"] header .main-logo .site-name-text,
+html[lang="uk"] header .main-logo .poligonium-brand-wordmark {
+    font-family: "Krona One", sans-serif;
+}

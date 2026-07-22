@@ -1,0 +1,11 @@
+{
+    "id": "poligonium/vfx-showreel",
+    "name": "VFX Showreel",
+    "namespace": "Botble\\VfxShowreel\\",
+    "provider": "Botble\\VfxShowreel\\Providers\\VfxShowreelServiceProvider",
+    "author": "Poligonium",
+    "url": "https://poligonium.com",
+    "version": "1.0.0",
+    "description": "Admin-managed VFX showreel cards for Poligonium.",
+    "minimum_core_version": "7.3.0"
+}

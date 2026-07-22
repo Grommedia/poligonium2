@@ -1,0 +1,11 @@
+{
+    "id": "poligonium/seo-optimizer",
+    "name": "SEO Optimizer",
+    "namespace": "Botble\\SeoOptimizer\\",
+    "provider": "Botble\\SeoOptimizer\\Providers\\SeoOptimizerServiceProvider",
+    "author": "Poligonium",
+    "url": "https://poligonium.com",
+    "version": "1.0.0",
+    "description": "SEO settings, structured data and sitemap extensions for Poligonium.",
+    "minimum_core_version": "7.3.0"
+}

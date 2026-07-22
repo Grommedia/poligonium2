@@ -1,0 +1,1099 @@
+.poligonium-services-page {
+    position: relative;
+    overflow: hidden;
+    margin-top: -1px;
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, .055) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(17, 24, 39, .055) 1px, transparent 1px),
+        #fbfaf8;
+    background-size: 36px 36px, 36px 36px, auto;
+    color: #111827;
+    animation: poligoniumServicesGrid 18s linear infinite;
+}
+
+.poligonium-services-page::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background:
+        radial-gradient(circle at 18% 14%, rgba(110, 78, 242, .14), transparent 26%),
+        radial-gradient(circle at 86% 28%, rgba(20, 184, 166, .14), transparent 24%),
+        radial-gradient(circle at 68% 84%, rgba(245, 158, 11, .12), transparent 28%);
+    pointer-events: none;
+}
+
+.poligonium-services-wrap {
+    position: relative;
+    z-index: 1;
+    width: min(100% - 48px, 1320px);
+    margin: 0 auto;
+    padding: clamp(96px, 11vw, 150px) 0 96px;
+}
+
+.poligonium-services-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, .68fr);
+    gap: clamp(28px, 5vw, 72px);
+    align-items: center;
+    min-height: 620px;
+    padding-bottom: 44px;
+}
+
+.poligonium-services-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 850;
+}
+
+.poligonium-services-kicker::before {
+    width: 8px;
+    height: 8px;
+    content: "";
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 0 6px rgba(110, 78, 242, .12);
+}
+
+.poligonium-services-title {
+    max-width: 900px;
+    margin: 0;
+    font-size: clamp(46px, 7vw, 96px);
+    line-height: .96;
+    letter-spacing: 0;
+}
+
+.poligonium-services-title span {
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.poligonium-services-lead {
+    max-width: 760px;
+    margin: 24px 0 0;
+    color: #4b5563;
+    font-size: clamp(17px, 1.6vw, 21px);
+    line-height: 1.65;
+}
+
+.poligonium-services-hero-note {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .74);
+    padding: 28px;
+    box-shadow: 0 24px 70px rgba(17, 24, 39, .08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.poligonium-services-hero-note::after {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 86px;
+    height: 86px;
+    content: "";
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 22px;
+    transform: rotate(18deg);
+    animation: poligoniumServicesCube 7s ease-in-out infinite;
+}
+
+.poligonium-services-hero-note strong {
+    display: block;
+    max-width: 260px;
+    color: #111827;
+    font-size: 26px;
+    line-height: 1.1;
+}
+
+.poligonium-services-hero-note p {
+    position: relative;
+    z-index: 1;
+    margin: 18px 0 0;
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.poligonium-services-side {
+    display: grid;
+    gap: 16px;
+}
+
+.poligonium-pipeline-map {
+    position: relative;
+    overflow: visible;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .72);
+    padding: 24px 142px 24px 28px;
+    box-shadow: 0 24px 70px rgba(17, 24, 39, .08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.poligonium-pipeline-map h2 {
+    margin: 0 0 18px;
+    color: #111827;
+    font-size: 24px;
+    line-height: 1.12;
+}
+
+.poligonium-pipeline-map ol {
+    position: relative;
+    display: grid;
+    gap: 9px;
+    margin: 0;
+    padding: 0 0 0 34px;
+    list-style: none;
+}
+
+.poligonium-pipeline-map ol::before {
+    position: absolute;
+    top: 11px;
+    bottom: 11px;
+    left: 10px;
+    width: 2px;
+    content: "";
+    background: linear-gradient(180deg, var(--primary-color), #14b8a6, #f59e0b);
+}
+
+.poligonium-pipeline-map li {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    align-items: center;
+    min-height: 42px;
+    border: 1px solid rgba(17, 24, 39, .07);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .76);
+    padding: 9px 10px 9px 14px;
+    transform: translateX(0);
+    cursor: pointer;
+    transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.poligonium-pipeline-map li::before {
+    position: absolute;
+    top: 50%;
+    left: -29px;
+    width: 11px;
+    height: 11px;
+    content: "";
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 0 5px rgba(110, 78, 242, .12);
+    transform: translateY(-50%);
+}
+
+.poligonium-pipeline-map li::after {
+    position: absolute;
+    top: 50%;
+    left: -24px;
+    width: 24px;
+    height: 1px;
+    content: "";
+    background: rgba(17, 24, 39, .14);
+}
+
+.poligonium-pipeline-map li:hover,
+.poligonium-pipeline-map li:focus,
+.poligonium-pipeline-map li.is-open,
+.poligonium-pipeline-map li.is-auto-active {
+    z-index: 5;
+    border-color: rgba(110, 78, 242, .34);
+    box-shadow: 0 16px 38px rgba(17, 24, 39, .12);
+    transform: translateX(4px);
+}
+
+.poligonium-pipeline-map li:hover > span,
+.poligonium-pipeline-map li:focus > span,
+.poligonium-pipeline-map li.is-open > span,
+.poligonium-pipeline-map li.is-auto-active > span {
+    opacity: 1;
+}
+
+.poligonium-pipeline-map strong {
+    color: #111827;
+    font-size: 14px;
+    line-height: 1.18;
+}
+
+.poligonium-pipeline-map span {
+    border-radius: 999px;
+    background: rgba(17, 24, 39, .08);
+    padding: 5px 8px;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.poligonium-pipeline-popover {
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+    right: calc(100% + 18px);
+    width: min(330px, 78vw);
+    border: 1px solid rgba(17, 24, 39, .1);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .96);
+    padding: 16px;
+    box-shadow: 0 24px 70px rgba(17, 24, 39, .18);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(12px, -50%) scale(.96);
+    transition: opacity .2s ease, transform .2s ease;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.poligonium-pipeline-popover::before {
+    position: absolute;
+    top: 50%;
+    right: -9px;
+    width: 18px;
+    height: 18px;
+    content: "";
+    border-top: 1px solid rgba(17, 24, 39, .1);
+    border-right: 1px solid rgba(17, 24, 39, .1);
+    background: inherit;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.poligonium-pipeline-map li:hover .poligonium-pipeline-popover,
+.poligonium-pipeline-map li:focus .poligonium-pipeline-popover,
+.poligonium-pipeline-map li.is-open .poligonium-pipeline-popover,
+.poligonium-pipeline-map li.is-auto-active .poligonium-pipeline-popover {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, -50%) scale(1);
+}
+
+.poligonium-pipeline-popover h3 {
+    margin: 0 0 8px;
+    color: #111827;
+    font-size: 18px;
+    line-height: 1.15;
+}
+
+.poligonium-pipeline-popover p {
+    margin: 0 0 10px;
+    color: #4b5563;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.poligonium-pipeline-popover ul {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.poligonium-pipeline-popover li {
+    min-height: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0 0 0 14px;
+    color: #374151;
+    font-size: 12px;
+    line-height: 1.35;
+    cursor: default;
+    transform: none;
+    transition: none;
+}
+
+.poligonium-pipeline-popover li:hover,
+.poligonium-pipeline-popover li:focus {
+    border-color: transparent;
+    box-shadow: none;
+    transform: none;
+}
+
+.poligonium-pipeline-tools {
+    position: absolute;
+    z-index: 18;
+    top: 50%;
+    left: calc(100% + 12px);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-18px, -50%) scale(.94);
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.poligonium-pipeline-tool {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(17, 24, 39, .09);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 16px 38px rgba(17, 24, 39, .14);
+    transform: translateX(-10px) rotate(-8deg);
+    transition: transform .24s ease;
+}
+
+.poligonium-pipeline-tool:nth-child(2) {
+    transform: translateX(-14px) translateY(-7px) rotate(7deg);
+}
+
+.poligonium-pipeline-tool:nth-child(3) {
+    transform: translateX(-18px) translateY(7px) rotate(-4deg);
+}
+
+.poligonium-pipeline-tool:nth-child(4) {
+    transform: translateX(-22px) translateY(-3px) rotate(9deg);
+}
+
+.poligonium-pipeline-tool img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+}
+
+.poligonium-pipeline-map li:hover .poligonium-pipeline-tools,
+.poligonium-pipeline-map li:focus .poligonium-pipeline-tools,
+.poligonium-pipeline-map li.is-open .poligonium-pipeline-tools,
+.poligonium-pipeline-map li.is-auto-active .poligonium-pipeline-tools {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, -50%) scale(1);
+}
+
+.poligonium-pipeline-map li:hover .poligonium-pipeline-tool,
+.poligonium-pipeline-map li:focus .poligonium-pipeline-tool,
+.poligonium-pipeline-map li.is-open .poligonium-pipeline-tool,
+.poligonium-pipeline-map li.is-auto-active .poligonium-pipeline-tool {
+    transform: translateX(0) rotate(0);
+}
+
+.poligonium-pipeline-map li:hover .poligonium-pipeline-tool:nth-child(2),
+.poligonium-pipeline-map li:focus .poligonium-pipeline-tool:nth-child(2),
+.poligonium-pipeline-map li.is-open .poligonium-pipeline-tool:nth-child(2),
+.poligonium-pipeline-map li.is-auto-active .poligonium-pipeline-tool:nth-child(2) {
+    transform: translateY(-8px) rotate(6deg);
+}
+
+.poligonium-pipeline-map li:hover .poligonium-pipeline-tool:nth-child(3),
+.poligonium-pipeline-map li:focus .poligonium-pipeline-tool:nth-child(3),
+.poligonium-pipeline-map li.is-open .poligonium-pipeline-tool:nth-child(3),
+.poligonium-pipeline-map li.is-auto-active .poligonium-pipeline-tool:nth-child(3) {
+    transform: translateY(8px) rotate(-5deg);
+}
+
+.poligonium-pipeline-map li:hover .poligonium-pipeline-tool:nth-child(4),
+.poligonium-pipeline-map li:focus .poligonium-pipeline-tool:nth-child(4),
+.poligonium-pipeline-map li.is-open .poligonium-pipeline-tool:nth-child(4),
+.poligonium-pipeline-map li.is-auto-active .poligonium-pipeline-tool:nth-child(4) {
+    transform: translateY(-3px) rotate(8deg);
+}
+
+.poligonium-pipeline-map li:hover .poligonium-pipeline-tool img,
+.poligonium-pipeline-map li:focus .poligonium-pipeline-tool img,
+.poligonium-pipeline-map li.is-open .poligonium-pipeline-tool img,
+.poligonium-pipeline-map li.is-auto-active .poligonium-pipeline-tool img {
+    animation: poligoniumPipelineIconFloat 1.75s ease-in-out infinite;
+}
+
+.poligonium-pipeline-map li:hover .poligonium-pipeline-tool:nth-child(2) img,
+.poligonium-pipeline-map li:focus .poligonium-pipeline-tool:nth-child(2) img,
+.poligonium-pipeline-map li.is-open .poligonium-pipeline-tool:nth-child(2) img,
+.poligonium-pipeline-map li.is-auto-active .poligonium-pipeline-tool:nth-child(2) img {
+    animation-delay: .16s;
+}
+
+.poligonium-pipeline-map li:hover .poligonium-pipeline-tool:nth-child(3) img,
+.poligonium-pipeline-map li:focus .poligonium-pipeline-tool:nth-child(3) img,
+.poligonium-pipeline-map li.is-open .poligonium-pipeline-tool:nth-child(3) img,
+.poligonium-pipeline-map li.is-auto-active .poligonium-pipeline-tool:nth-child(3) img {
+    animation-delay: .3s;
+}
+
+.poligonium-pipeline-map li:hover .poligonium-pipeline-tool:nth-child(4) img,
+.poligonium-pipeline-map li:focus .poligonium-pipeline-tool:nth-child(4) img,
+.poligonium-pipeline-map li.is-open .poligonium-pipeline-tool:nth-child(4) img,
+.poligonium-pipeline-map li.is-auto-active .poligonium-pipeline-tool:nth-child(4) img {
+    animation-delay: .44s;
+}
+
+.poligonium-pipeline-popover li::before {
+    top: .55em;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border: 0;
+    box-shadow: none;
+    transform: none;
+}
+
+.poligonium-pipeline-popover li::after {
+    display: none;
+}
+
+.poligonium-services-orbit {
+    position: absolute;
+    top: 90px;
+    right: 7%;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(110, 78, 242, .18);
+    border-radius: 50%;
+    animation: poligoniumServicesOrbit 22s linear infinite;
+}
+
+.poligonium-services-orbit::before,
+.poligonium-services-orbit::after {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    content: "";
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 0 7px rgba(110, 78, 242, .12);
+}
+
+.poligonium-services-orbit::before {
+    top: 19%;
+    right: 8%;
+}
+
+.poligonium-services-orbit::after {
+    left: 17%;
+    bottom: 8%;
+    background: #14b8a6;
+    box-shadow: 0 0 0 7px rgba(20, 184, 166, .12);
+}
+
+.poligonium-service-tabs {
+    display: grid;
+    gap: 22px;
+}
+
+.poligonium-service-tablist {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.poligonium-service-tab {
+    position: relative;
+    --direction-color: #2563eb;
+    --direction-soft: rgba(37, 99, 235, .095);
+    --direction-border: rgba(37, 99, 235, .28);
+    --direction-glow: rgba(37, 99, 235, .13);
+    min-height: 188px;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 16px;
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, .045) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(17, 24, 39, .045) 1px, transparent 1px),
+        rgba(255, 255, 255, .66);
+    background-size: 24px 24px, 24px 24px, auto;
+    padding: 22px;
+    color: #111827;
+    text-align: left;
+    box-shadow: 0 18px 46px rgba(17, 24, 39, .07);
+    transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease, background-color .24s ease;
+    animation: poligoniumDirectionGrid 14s linear infinite;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.poligonium-service-tab:nth-child(2) {
+    --direction-color: #0f766e;
+    --direction-soft: rgba(15, 118, 110, .1);
+    --direction-border: rgba(15, 118, 110, .3);
+    --direction-glow: rgba(15, 118, 110, .13);
+}
+
+.poligonium-service-tab:nth-child(3) {
+    --direction-color: #b45309;
+    --direction-soft: rgba(180, 83, 9, .095);
+    --direction-border: rgba(180, 83, 9, .31);
+    --direction-glow: rgba(180, 83, 9, .13);
+}
+
+.poligonium-service-tab:nth-child(4) {
+    --direction-color: #7c3aed;
+    --direction-soft: rgba(124, 58, 237, .09);
+    --direction-border: rgba(124, 58, 237, .29);
+    --direction-glow: rgba(124, 58, 237, .13);
+}
+
+.poligonium-service-tab::before {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    content: "";
+    border: 1px solid var(--direction-border);
+    border-radius: 16px;
+    background: var(--direction-soft);
+    transform: rotate(18deg);
+    transition: transform .24s ease;
+    animation: poligoniumDirectionToken 6s ease-in-out infinite;
+}
+
+.poligonium-service-tab::after {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    content: "";
+    background: var(--direction-color);
+    opacity: .35;
+    transform: scaleY(.28);
+    transform-origin: bottom;
+    transition: transform .24s ease;
+}
+
+.poligonium-service-tab:hover,
+.poligonium-service-tab.is-active {
+    border-color: var(--direction-border);
+    background-color: rgba(255, 255, 255, .84);
+    box-shadow: 0 24px 64px rgba(17, 24, 39, .1), 0 0 0 5px var(--direction-glow);
+    transform: translateY(-6px);
+}
+
+.poligonium-service-tab:hover::before,
+.poligonium-service-tab.is-active::before {
+    transform: rotate(42deg) scale(1.06);
+}
+
+.poligonium-service-tab:hover::after,
+.poligonium-service-tab.is-active::after {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.poligonium-service-tab small,
+.poligonium-price-card small {
+    display: inline-flex;
+    border-radius: 999px;
+    background: var(--direction-soft, rgba(110, 78, 242, .09));
+    padding: 6px 10px;
+    color: var(--direction-color, var(--primary-color));
+    font-weight: 850;
+}
+
+.poligonium-service-tab strong {
+    position: relative;
+    z-index: 1;
+    display: block;
+    max-width: 82%;
+    margin-top: 18px;
+    font-size: clamp(23px, 2.1vw, 34px);
+    line-height: 1.08;
+}
+
+.poligonium-service-tab span {
+    position: relative;
+    z-index: 1;
+    display: block;
+    max-width: 86%;
+    margin-top: 10px;
+    color: #6b7280;
+    line-height: 1.45;
+}
+
+.poligonium-service-panel {
+    display: none;
+    --panel-color: #2563eb;
+    --panel-soft: rgba(37, 99, 235, .075);
+    --panel-border: rgba(37, 99, 235, .2);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 18px;
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, .038) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(17, 24, 39, .038) 1px, transparent 1px),
+        rgba(255, 255, 255, .68);
+    background-size: 30px 30px, 30px 30px, auto;
+    padding: clamp(22px, 4vw, 48px);
+    box-shadow: 0 24px 70px rgba(17, 24, 39, .08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.poligonium-service-panel::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background:
+        radial-gradient(circle at 12% 18%, var(--panel-soft), transparent 28%),
+        radial-gradient(circle at 88% 8%, var(--panel-soft), transparent 25%),
+        linear-gradient(120deg, transparent 0 62%, rgba(255, 255, 255, .56) 62% 64%, transparent 64%);
+    opacity: .95;
+    pointer-events: none;
+}
+
+.poligonium-service-panel::after {
+    position: absolute;
+    top: 28px;
+    right: 34px;
+    width: 96px;
+    height: 96px;
+    content: "";
+    border: 1px solid var(--panel-border);
+    border-radius: 24px;
+    background: var(--panel-soft);
+    transform: rotate(16deg);
+    animation: poligoniumDirectionToken 7s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.poligonium-service-panel > * {
+    position: relative;
+    z-index: 1;
+}
+
+.poligonium-service-panel.is-active {
+    display: block;
+    border-color: var(--panel-border);
+    box-shadow: 0 24px 70px rgba(17, 24, 39, .08), inset 0 0 0 1px var(--panel-soft);
+    animation: poligoniumServicesPanel .32s ease both, poligoniumDirectionGrid 16s linear infinite;
+}
+
+.poligonium-service-tabs[data-service-tone="modeling"] .poligonium-service-panel.is-active {
+    --panel-color: #2563eb;
+    --panel-soft: rgba(37, 99, 235, .085);
+    --panel-border: rgba(37, 99, 235, .24);
+}
+
+.poligonium-service-tabs[data-service-tone="rigging"] .poligonium-service-panel.is-active {
+    --panel-color: #0f766e;
+    --panel-soft: rgba(15, 118, 110, .09);
+    --panel-border: rgba(15, 118, 110, .25);
+}
+
+.poligonium-service-tabs[data-service-tone="video"] .poligonium-service-panel.is-active {
+    --panel-color: #b45309;
+    --panel-soft: rgba(180, 83, 9, .085);
+    --panel-border: rgba(180, 83, 9, .26);
+}
+
+.poligonium-service-tabs[data-service-tone="vr"] .poligonium-service-panel.is-active {
+    --panel-color: #7c3aed;
+    --panel-soft: rgba(124, 58, 237, .08);
+    --panel-border: rgba(124, 58, 237, .24);
+}
+
+.poligonium-panel-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, .48fr);
+    gap: 28px;
+    align-items: end;
+    margin-bottom: 34px;
+}
+
+.poligonium-panel-head h2 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(34px, 4.4vw, 64px);
+    line-height: 1;
+}
+
+.poligonium-panel-head p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.poligonium-offer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.poligonium-price-card,
+.poligonium-process-card,
+.poligonium-note-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 14px;
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, .032) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(17, 24, 39, .032) 1px, transparent 1px),
+        rgba(255, 255, 255, .74);
+    background-size: 22px 22px, 22px 22px, auto;
+    padding: 22px;
+    box-shadow: 0 16px 38px rgba(17, 24, 39, .06);
+}
+
+.poligonium-service-panel .poligonium-price-card small {
+    background: var(--panel-soft);
+    color: var(--panel-color);
+}
+
+.poligonium-price-card h3,
+.poligonium-process-card h3,
+.poligonium-note-card h3 {
+    margin: 14px 0 10px;
+    color: #111827;
+    font-size: 24px;
+    line-height: 1.12;
+}
+
+.poligonium-price {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    border-radius: 999px;
+    border: 1px solid rgba(17, 24, 39, .14);
+    background: rgba(255, 255, 255, .84);
+    padding: 8px 14px;
+    color: #111827;
+    font-size: 15px;
+    font-weight: 850;
+    box-shadow: inset 0 -2px 0 var(--panel-soft), 0 10px 24px rgba(17, 24, 39, .06);
+}
+
+.poligonium-price-card p,
+.poligonium-process-card p,
+.poligonium-note-card p {
+    color: #4b5563;
+    line-height: 1.62;
+}
+
+.poligonium-price-card ul,
+.poligonium-process-card ul {
+    display: grid;
+    gap: 8px;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.poligonium-price-card li,
+.poligonium-process-card li {
+    position: relative;
+    padding-left: 18px;
+    color: #374151;
+    line-height: 1.48;
+}
+
+.poligonium-price-card li::before,
+.poligonium-process-card li::before {
+    position: absolute;
+    top: .62em;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    content: "";
+    border-radius: 50%;
+    background: var(--panel-color, #14b8a6);
+}
+
+.poligonium-wide-note {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 16px;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.poligonium-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.poligonium-process-card strong {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: #111827;
+    color: #fff;
+}
+
+.poligonium-services-cta {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 20px;
+    align-items: center;
+    margin-top: 24px;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .78);
+    padding: clamp(22px, 3vw, 34px);
+    box-shadow: 0 18px 46px rgba(17, 24, 39, .07);
+}
+
+.poligonium-services-cta h2 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(28px, 3.8vw, 52px);
+}
+
+.poligonium-services-cta p {
+    margin: 10px 0 0;
+    color: #4b5563;
+}
+
+html[data-bs-theme="dark"] .poligonium-services-page {
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255, 255, 255, .06) 1px, transparent 1px),
+        #121218;
+}
+
+html[data-bs-theme="dark"] .poligonium-services-title,
+html[data-bs-theme="dark"] .poligonium-services-hero-note strong,
+html[data-bs-theme="dark"] .poligonium-pipeline-map h2,
+html[data-bs-theme="dark"] .poligonium-pipeline-map strong,
+html[data-bs-theme="dark"] .poligonium-service-tab,
+html[data-bs-theme="dark"] .poligonium-panel-head h2,
+html[data-bs-theme="dark"] .poligonium-price-card h3,
+html[data-bs-theme="dark"] .poligonium-process-card h3,
+html[data-bs-theme="dark"] .poligonium-note-card h3,
+html[data-bs-theme="dark"] .poligonium-services-cta h2 {
+    color: #f9fafb;
+}
+
+html[data-bs-theme="dark"] .poligonium-services-hero-note,
+html[data-bs-theme="dark"] .poligonium-pipeline-map,
+html[data-bs-theme="dark"] .poligonium-pipeline-map li,
+html[data-bs-theme="dark"] .poligonium-pipeline-popover,
+html[data-bs-theme="dark"] .poligonium-pipeline-tool,
+html[data-bs-theme="dark"] .poligonium-service-tab,
+html[data-bs-theme="dark"] .poligonium-service-panel,
+html[data-bs-theme="dark"] .poligonium-price-card,
+html[data-bs-theme="dark"] .poligonium-process-card,
+html[data-bs-theme="dark"] .poligonium-note-card,
+html[data-bs-theme="dark"] .poligonium-services-cta {
+    border-color: rgba(255, 255, 255, .1);
+    background-color: rgba(24, 24, 30, .78);
+}
+
+html[data-bs-theme="dark"] .poligonium-services-lead,
+html[data-bs-theme="dark"] .poligonium-services-hero-note p,
+html[data-bs-theme="dark"] .poligonium-pipeline-map span,
+html[data-bs-theme="dark"] .poligonium-pipeline-popover p,
+html[data-bs-theme="dark"] .poligonium-pipeline-popover li,
+html[data-bs-theme="dark"] .poligonium-service-tab span,
+html[data-bs-theme="dark"] .poligonium-panel-head p,
+html[data-bs-theme="dark"] .poligonium-price-card p,
+html[data-bs-theme="dark"] .poligonium-process-card p,
+html[data-bs-theme="dark"] .poligonium-note-card p,
+html[data-bs-theme="dark"] .poligonium-price-card li,
+html[data-bs-theme="dark"] .poligonium-process-card li,
+html[data-bs-theme="dark"] .poligonium-services-cta p {
+    color: #c7c7d1;
+}
+
+html[data-bs-theme="dark"] .poligonium-pipeline-popover h3 {
+    color: #f9fafb;
+}
+
+html[data-bs-theme="dark"] .poligonium-pipeline-popover li {
+    background: transparent;
+}
+
+@keyframes poligoniumServicesGrid {
+    to {
+        background-position: 36px 36px, 36px 36px, 0 0;
+    }
+}
+
+@keyframes poligoniumServicesOrbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes poligoniumServicesCube {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(18deg);
+    }
+    50% {
+        transform: translate3d(0, -14px, 0) rotate(42deg);
+    }
+}
+
+@keyframes poligoniumServicesPanel {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes poligoniumDirectionGrid {
+    to {
+        background-position: 24px 24px, 24px 24px, 0 0;
+    }
+}
+
+@keyframes poligoniumDirectionToken {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(16deg);
+    }
+    50% {
+        transform: translate3d(0, -10px, 0) rotate(34deg);
+    }
+}
+
+@keyframes poligoniumPipelineIconFloat {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    35% {
+        transform: translate3d(1px, -4px, 0) rotate(3deg);
+    }
+    70% {
+        transform: translate3d(-1px, 2px, 0) rotate(-2deg);
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .poligonium-pipeline-map {
+        padding-right: 118px;
+    }
+
+    .poligonium-service-tablist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .poligonium-offer-grid,
+    .poligonium-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 991.98px) {
+    .poligonium-services-hero,
+    .poligonium-services-side,
+    .poligonium-panel-head,
+    .poligonium-wide-note,
+    .poligonium-services-cta {
+        grid-template-columns: 1fr;
+    }
+
+    .poligonium-service-tablist {
+        grid-template-columns: 1fr;
+    }
+
+    .poligonium-pipeline-map {
+        padding-right: 22px;
+    }
+
+    .poligonium-service-tab {
+        min-height: 132px;
+    }
+
+    .poligonium-pipeline-popover {
+        position: static;
+        display: none;
+        width: auto;
+        margin-top: 10px;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+    }
+
+    .poligonium-pipeline-popover::before {
+        display: none;
+    }
+
+    .poligonium-pipeline-map li:hover .poligonium-pipeline-popover,
+    .poligonium-pipeline-map li:focus .poligonium-pipeline-popover,
+    .poligonium-pipeline-map li.is-open .poligonium-pipeline-popover,
+    .poligonium-pipeline-map li.is-auto-active .poligonium-pipeline-popover {
+        display: block;
+        transform: none;
+    }
+
+    .poligonium-pipeline-tools {
+        position: static;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        display: none;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+    }
+
+    .poligonium-pipeline-map li:hover .poligonium-pipeline-tools,
+    .poligonium-pipeline-map li:focus .poligonium-pipeline-tools,
+    .poligonium-pipeline-map li.is-open .poligonium-pipeline-tools,
+    .poligonium-pipeline-map li.is-auto-active .poligonium-pipeline-tools {
+        display: flex;
+        transform: none;
+    }
+
+    .poligonium-pipeline-tool,
+    .poligonium-pipeline-tool:nth-child(2),
+    .poligonium-pipeline-tool:nth-child(3),
+    .poligonium-pipeline-tool:nth-child(4) {
+        transform: none;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .poligonium-services-wrap {
+        width: min(100% - 24px, 1320px);
+        padding-top: 86px;
+        padding-bottom: 60px;
+    }
+
+    .poligonium-services-hero {
+        min-height: 0;
+    }
+
+    .poligonium-services-orbit,
+    .poligonium-services-hero-note::after {
+        display: none;
+    }
+
+    .poligonium-offer-grid,
+    .poligonium-process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .poligonium-service-panel {
+        padding: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .poligonium-services-page,
+    .poligonium-services-orbit,
+    .poligonium-services-hero-note::after,
+    .poligonium-service-panel.is-active,
+    .poligonium-service-tab,
+    .poligonium-service-tab::before,
+    .poligonium-service-panel::after,
+    .poligonium-pipeline-tool img {
+        animation: none;
+    }
+
+    .poligonium-service-tab {
+        transition: none;
+    }
+}

@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /install/
+Disallow: /storage/app/
+Allow: /
+
+Sitemap: https://poligonium.com/sitemap.xml

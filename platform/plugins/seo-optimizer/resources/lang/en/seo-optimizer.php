@@ -1,0 +1,56 @@
+<?php
+
+return [
+    'menu_name' => 'SEO Center',
+    'dashboard' => [
+        'title' => 'Site SEO readiness',
+        'description' => 'Control robots.txt, sitemap.xml, indexing, canonical/hreflang, structured data and verification snippets before launch.',
+        'checklist' => 'Technical checklist',
+        'quick_links' => 'Quick checks',
+        'robots_missing' => 'robots.txt file was not found.',
+        'actions' => [
+            'settings' => 'SEO settings',
+            'sitemap' => 'Open sitemap',
+        ],
+        'checks' => [
+            'robots' => 'robots.txt exists and contains sitemap',
+            'sitemap' => 'XML sitemap is available',
+            'indexing' => 'Public pages are open for indexing',
+            'canonical_hreflang' => 'Canonical and hreflang are enabled',
+            'structured_data' => 'Structured data is enabled',
+            'uk_en' => 'Ukrainian and English versions',
+        ],
+        'status' => [
+            'ready' => 'Ready',
+            'attention' => 'Attention',
+        ],
+        'stats' => [
+            'title' => 'Indexable content',
+            'projects' => '3D character portfolio',
+            'vfx' => 'VFX Showreel',
+            'courses' => 'Courses',
+            'campaigns' => 'Support projects',
+        ],
+    ],
+    'settings' => [
+        'title' => 'SEO Optimization',
+        'description' => 'Search indexing, verification codes, structured data and custom tracking snippets.',
+        'enable_structured_data' => 'Enable structured data',
+        'enable_structured_data_help' => 'Adds Organization JSON-LD to the public site. Basic WebSite JSON-LD is already rendered by the theme.',
+        'enable_canonical_hreflang' => 'Enable canonical and hreflang links',
+        'enable_canonical_hreflang_help' => 'Adds canonical URL and Ukrainian/English alternate links.',
+        'google_site_verification' => 'Google Search Console verification',
+        'bing_site_verification' => 'Bing Webmaster verification',
+        'organization_name' => 'Organization name',
+        'organization_url' => 'Organization URL',
+        'organization_logo' => 'Organization logo',
+        'organization_phone' => 'Organization phone',
+        'organization_email' => 'Organization email',
+        'organization_same_as' => 'Social/profile URLs',
+        'organization_same_as_help' => 'One public profile URL per line.',
+        'extra_head_html' => 'Extra code before </head>',
+        'extra_head_html_help' => 'Use for meta tags, pixels or scripts that must be loaded in the page head.',
+        'extra_body_html' => 'Extra code after <body>',
+        'extra_body_html_help' => 'Use for noscript tags or tracking snippets that must be loaded after body start.',
+    ],
+];

@@ -1,0 +1,56 @@
+<?php
+
+return [
+    'menu_name' => 'SEO Центр',
+    'dashboard' => [
+        'title' => 'SEO-готовність сайту',
+        'description' => 'Контроль robots.txt, sitemap.xml, індексації, canonical/hreflang, структурованих даних і службових кодів перед запуском сайту.',
+        'checklist' => 'Технічний чек-лист',
+        'quick_links' => 'Швидкі перевірки',
+        'robots_missing' => 'Файл robots.txt не знайдено.',
+        'actions' => [
+            'settings' => 'Налаштування SEO',
+            'sitemap' => 'Відкрити sitemap',
+        ],
+        'checks' => [
+            'robots' => 'robots.txt доступний і містить sitemap',
+            'sitemap' => 'XML sitemap доступний',
+            'indexing' => 'Публічні сторінки відкриті для індексації',
+            'canonical_hreflang' => 'Canonical і hreflang увімкнені',
+            'structured_data' => 'Структуровані дані увімкнені',
+            'uk_en' => 'Українська та англійська версії',
+        ],
+        'status' => [
+            'ready' => 'Готово',
+            'attention' => 'Увага',
+        ],
+        'stats' => [
+            'title' => 'Матеріали в індексації',
+            'projects' => 'Портфоліо 3D персонажів',
+            'vfx' => 'VFX Showreel',
+            'courses' => 'Навчальні курси',
+            'campaigns' => 'Проєкти підтримки',
+        ],
+    ],
+    'settings' => [
+        'title' => 'SEO-оптимізація',
+        'description' => 'Індексація, коди підтвердження, структуровані дані та додаткові лічильники.',
+        'enable_structured_data' => 'Увімкнути структуровані дані',
+        'enable_structured_data_help' => 'Додає Organization JSON-LD на публічний сайт. Базовий WebSite JSON-LD вже виводить тема.',
+        'enable_canonical_hreflang' => 'Увімкнути canonical і hreflang',
+        'enable_canonical_hreflang_help' => 'Додає canonical URL та альтернативні посилання для української/англійської мови.',
+        'google_site_verification' => 'Підтвердження Google Search Console',
+        'bing_site_verification' => 'Підтвердження Bing Webmaster',
+        'organization_name' => 'Назва організації',
+        'organization_url' => 'URL організації',
+        'organization_logo' => 'Логотип організації',
+        'organization_phone' => 'Телефон організації',
+        'organization_email' => 'Email організації',
+        'organization_same_as' => 'Соцмережі/публічні профілі',
+        'organization_same_as_help' => 'Одне публічне посилання в рядку.',
+        'extra_head_html' => 'Додатковий код перед </head>',
+        'extra_head_html_help' => 'Для метатегів, пікселів і скриптів, які мають бути в head.',
+        'extra_body_html' => 'Додатковий код після <body>',
+        'extra_body_html_help' => 'Для noscript і лічильників, які мають бути одразу після відкриття body.',
+    ],
+];

@@ -1,0 +1,56 @@
+<?php
+
+return [
+    'menu_name' => 'SEO Центр',
+    'dashboard' => [
+        'title' => 'SEO-готовность сайта',
+        'description' => 'Контроль robots.txt, sitemap.xml, индексации, canonical/hreflang, структурированных данных и служебных кодов перед запуском сайта.',
+        'checklist' => 'Технический чек-лист',
+        'quick_links' => 'Быстрые проверки',
+        'robots_missing' => 'Файл robots.txt не найден.',
+        'actions' => [
+            'settings' => 'Настройки SEO',
+            'sitemap' => 'Открыть sitemap',
+        ],
+        'checks' => [
+            'robots' => 'robots.txt доступен и содержит sitemap',
+            'sitemap' => 'XML sitemap доступен',
+            'indexing' => 'Публичные страницы открыты для индексации',
+            'canonical_hreflang' => 'Canonical и hreflang включены',
+            'structured_data' => 'Структурированные данные включены',
+            'uk_en' => 'Украинская и английская версии',
+        ],
+        'status' => [
+            'ready' => 'Готово',
+            'attention' => 'Внимание',
+        ],
+        'stats' => [
+            'title' => 'Материалы в индексации',
+            'projects' => 'Портфолио 3D персонажей',
+            'vfx' => 'VFX Showreel',
+            'courses' => 'Учебные курсы',
+            'campaigns' => 'Проекты поддержки',
+        ],
+    ],
+    'settings' => [
+        'title' => 'SEO-оптимизация',
+        'description' => 'Индексация, коды подтверждения, структурированные данные и дополнительные счетчики.',
+        'enable_structured_data' => 'Включить структурированные данные',
+        'enable_structured_data_help' => 'Добавляет Organization JSON-LD на публичный сайт. Базовый WebSite JSON-LD уже выводит тема.',
+        'enable_canonical_hreflang' => 'Включить canonical и hreflang',
+        'enable_canonical_hreflang_help' => 'Добавляет canonical URL и альтернативные ссылки для украинского/английского языка.',
+        'google_site_verification' => 'Подтверждение Google Search Console',
+        'bing_site_verification' => 'Подтверждение Bing Webmaster',
+        'organization_name' => 'Название организации',
+        'organization_url' => 'URL организации',
+        'organization_logo' => 'Логотип организации',
+        'organization_phone' => 'Телефон организации',
+        'organization_email' => 'Email организации',
+        'organization_same_as' => 'Соцсети/публичные профили',
+        'organization_same_as_help' => 'Одна публичная ссылка в строке.',
+        'extra_head_html' => 'Дополнительный код перед </head>',
+        'extra_head_html_help' => 'Для метатегов, пикселей и скриптов, которые должны быть в head.',
+        'extra_body_html' => 'Дополнительный код после <body>',
+        'extra_body_html_help' => 'Для noscript и счетчиков, которые должны быть сразу после открытия body.',
+    ],
+];

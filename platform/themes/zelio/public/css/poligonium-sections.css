@@ -1,0 +1,1706 @@
+.poligonium-animated-panel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 18px;
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, .055) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(17, 24, 39, .055) 1px, transparent 1px),
+        rgba(255, 255, 255, .76);
+    background-size: 34px 34px, 34px 34px, auto;
+    box-shadow: 0 24px 70px rgba(17, 24, 39, .08);
+    animation: poligoniumGridDrift 16s linear infinite;
+}
+
+.poligonium-animated-panel::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background:
+        radial-gradient(circle at 14% 18%, rgba(110, 78, 242, .14), transparent 26%),
+        radial-gradient(circle at 86% 24%, rgba(20, 184, 166, .14), transparent 24%),
+        radial-gradient(circle at 64% 92%, rgba(245, 158, 11, .12), transparent 22%);
+    opacity: .78;
+    pointer-events: none;
+}
+
+.poligonium-animated-panel::after {
+    position: absolute;
+    inset: 16px;
+    content: "";
+    border: 1px solid rgba(17, 24, 39, .06);
+    border-radius: 14px;
+    pointer-events: none;
+}
+
+.poligonium-section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.poligonium-section-kicker::before {
+    width: 8px;
+    height: 8px;
+    content: "";
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 0 6px rgba(110, 78, 242, .12);
+}
+
+.poligonium-floating-cube {
+    position: absolute;
+    z-index: 0;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(17, 24, 39, .12);
+    border-radius: 10px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, .9), rgba(110, 78, 242, .16)),
+        linear-gradient(45deg, transparent 48%, rgba(17, 24, 39, .12) 49%, rgba(17, 24, 39, .12) 51%, transparent 52%);
+    box-shadow: 0 18px 44px rgba(17, 24, 39, .12);
+    transform: rotate3d(1, 1, 0, 18deg);
+    animation: poligoniumCubeFloat 7s ease-in-out infinite;
+}
+
+.poligonium-floating-cube.cube-a {
+    top: 38px;
+    right: 8%;
+}
+
+.poligonium-floating-cube.cube-b {
+    right: 28%;
+    bottom: 56px;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    animation-delay: -2.6s;
+}
+
+.poligonium-orbit {
+    position: absolute;
+    z-index: 0;
+    border: 1px solid rgba(110, 78, 242, .18);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: poligoniumOrbitSpin 18s linear infinite;
+}
+
+.poligonium-orbit::before,
+.poligonium-orbit::after {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    content: "";
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 0 6px rgba(110, 78, 242, .12);
+}
+
+.poligonium-orbit::before {
+    top: 18%;
+    right: 8%;
+}
+
+.poligonium-orbit::after {
+    left: 18%;
+    bottom: 7%;
+    background: #14b8a6;
+    box-shadow: 0 0 0 6px rgba(20, 184, 166, .12);
+}
+
+.poligonium-service-lab {
+    padding-top: 72px;
+    padding-bottom: 72px;
+}
+
+.poligonium-service-lab .poligonium-animated-panel {
+    padding: clamp(22px, 3.2vw, 46px);
+}
+
+.poligonium-service-orbit {
+    top: -96px;
+    right: -78px;
+    width: 260px;
+    height: 260px;
+}
+
+.poligonium-service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.poligonium-service-card {
+    position: relative;
+    min-height: 202px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .72);
+    padding: 22px;
+    color: #111827;
+    box-shadow: 0 18px 42px rgba(17, 24, 39, .07);
+    transform: translateY(0);
+    transition: transform .26s ease, border-color .26s ease, box-shadow .26s ease, background-color .26s ease;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.poligonium-service-card::before {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 58px;
+    height: 58px;
+    content: "";
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 18px;
+    transform: rotate(18deg);
+    transition: transform .28s ease, border-color .28s ease;
+}
+
+.poligonium-service-card::after {
+    position: absolute;
+    inset: auto 0 0;
+    height: 3px;
+    content: "";
+    background: linear-gradient(90deg, var(--primary-color), #14b8a6, #f59e0b);
+    transform: scaleX(.18);
+    transform-origin: left;
+    transition: transform .28s ease;
+}
+
+.poligonium-service-card:hover {
+    border-color: rgba(110, 78, 242, .32);
+    background: rgba(255, 255, 255, .9);
+    box-shadow: 0 24px 60px rgba(17, 24, 39, .12);
+    transform: translateY(-8px);
+}
+
+.poligonium-service-card:hover::before {
+    border-color: rgba(110, 78, 242, .26);
+    transform: rotate(42deg) scale(1.08);
+}
+
+.poligonium-service-card:hover::after {
+    transform: scaleX(1);
+}
+
+.poligonium-service-number {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #111827;
+    color: #fff;
+    font-weight: 850;
+}
+
+.poligonium-service-title {
+    position: relative;
+    z-index: 1;
+    max-width: 88%;
+    margin: 18px 0 12px;
+    color: #111827;
+    font-size: clamp(20px, 1.55vw, 26px);
+    line-height: 1.1;
+}
+
+.poligonium-service-title a {
+    color: inherit;
+}
+
+.poligonium-service-text {
+    position: relative;
+    z-index: 1;
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.poligonium-service-link {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    border: 1px solid rgba(17, 24, 39, .1);
+    border-radius: 50%;
+    color: #111827;
+    transition: transform .24s ease, background-color .24s ease, color .24s ease;
+}
+
+.poligonium-service-card:hover .poligonium-service-link {
+    background: var(--primary-color);
+    color: #fff;
+    transform: rotate(45deg);
+}
+
+.poligonium-service-note {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .66);
+    padding: 16px 18px;
+}
+
+.poligonium-experience-lab {
+    padding-top: 72px;
+}
+
+.poligonium-experience-lab .poligonium-animated-panel {
+    padding: clamp(22px, 3.2vw, 46px);
+}
+
+.poligonium-experience-orbit {
+    top: 28px;
+    right: -86px;
+    width: 230px;
+    height: 230px;
+    animation-duration: 20s;
+}
+
+.poligonium-experience-inner {
+    position: relative;
+}
+
+.poligonium-experience-title {
+    max-width: 760px;
+    margin: 16px 0 0;
+    color: #111827;
+    font-size: clamp(34px, 4.5vw, 62px);
+    line-height: 1.02;
+}
+
+.poligonium-experience-title span {
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.poligonium-experience-stack {
+    display: grid;
+    gap: 12px;
+    height: 100%;
+}
+
+.poligonium-experience-chip,
+.poligonium-experience-role {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .74);
+    box-shadow: 0 18px 42px rgba(17, 24, 39, .07);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.poligonium-experience-chip {
+    padding: 14px;
+    transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+}
+
+.poligonium-experience-chip::before {
+    position: absolute;
+    inset: auto 0 0;
+    height: 3px;
+    content: "";
+    background: linear-gradient(90deg, var(--primary-color), #14b8a6);
+    transform: scaleX(.24);
+    transform-origin: left;
+    transition: transform .24s ease;
+}
+
+.poligonium-experience-chip:hover {
+    border-color: rgba(110, 78, 242, .3);
+    box-shadow: 0 22px 52px rgba(17, 24, 39, .11);
+    transform: translateX(8px);
+}
+
+.poligonium-experience-chip:hover::before {
+    transform: scaleX(1);
+}
+
+.poligonium-experience-chip img {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.poligonium-experience-chip h5 {
+    margin: 0;
+    color: #111827;
+    font-size: 17px;
+    line-height: 1.15;
+}
+
+.poligonium-experience-chip span {
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.poligonium-experience-role {
+    height: 100%;
+    padding: clamp(20px, 3vw, 34px);
+}
+
+.poligonium-experience-role::before {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 78px;
+    height: 78px;
+    content: "";
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 22px;
+    transform: rotate(18deg);
+}
+
+.poligonium-experience-role h6 {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 18px;
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 850;
+}
+
+.poligonium-experience-role ul {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.poligonium-experience-role li {
+    position: relative;
+    padding-left: 18px;
+    color: #374151;
+    line-height: 1.65;
+}
+
+.poligonium-experience-role li::before {
+    position: absolute;
+    top: .7em;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    content: "";
+    border-radius: 50%;
+    background: #14b8a6;
+}
+
+.poligonium-experience-skills {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.poligonium-experience-skills span {
+    border: 1px solid rgba(17, 24, 39, .09);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .7);
+    padding: 7px 12px;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.poligonium-resume-lab {
+    padding-top: 72px;
+}
+
+.poligonium-resume-lab .poligonium-animated-panel {
+    padding: clamp(22px, 4vw, 54px);
+}
+
+.poligonium-resume-orbit {
+    left: -110px;
+    bottom: -120px;
+    width: 300px;
+    height: 300px;
+    animation-duration: 22s;
+}
+
+.poligonium-resume-card {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .72);
+    padding: clamp(20px, 3vw, 34px);
+    box-shadow: 0 18px 46px rgba(17, 24, 39, .08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.poligonium-resume-card::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 30px;
+    width: 1px;
+    content: "";
+    background: linear-gradient(180deg, transparent, rgba(110, 78, 242, .46), transparent);
+}
+
+.poligonium-resume-head {
+    position: relative;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 26px;
+}
+
+.poligonium-resume-icon {
+    display: inline-flex;
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: #111827;
+    color: #fff;
+    box-shadow: 0 14px 34px rgba(17, 24, 39, .18);
+}
+
+.poligonium-resume-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.poligonium-resume-head h3 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(28px, 3vw, 42px);
+}
+
+.poligonium-timeline {
+    position: relative;
+    display: grid;
+    gap: 16px;
+}
+
+.poligonium-timeline-item {
+    position: relative;
+    margin-left: 24px;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .78);
+    padding: 18px 18px 18px 22px;
+    transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+}
+
+.poligonium-timeline-item::before {
+    position: absolute;
+    top: 24px;
+    left: -31px;
+    width: 13px;
+    height: 13px;
+    content: "";
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 0 6px rgba(110, 78, 242, .14);
+}
+
+.poligonium-timeline-item:hover {
+    border-color: rgba(110, 78, 242, .28);
+    box-shadow: 0 18px 44px rgba(17, 24, 39, .1);
+    transform: translateX(8px);
+}
+
+.poligonium-timeline-time {
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 850;
+    letter-spacing: 0;
+}
+
+.poligonium-timeline-title {
+    margin: 6px 0;
+    color: #111827;
+    font-size: 20px;
+}
+
+.poligonium-timeline-subtitle {
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 999px;
+    background: rgba(110, 78, 242, .08);
+    padding: 7px 12px;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.section-hero-1 {
+    padding-top: clamp(118px, 10vw, 138px) !important;
+    padding-bottom: clamp(66px, 6vw, 82px) !important;
+}
+
+.section-hero-1 .container {
+    width: min(1640px, calc(100% - 40px));
+    max-width: none;
+}
+
+.section-projects-2 .container {
+    width: min(1240px, calc(100% - 48px));
+    max-width: none;
+}
+
+.section-hero-1 .col-lg-6 {
+    position: relative;
+    z-index: 2;
+}
+
+.section-hero-1 h1.ds-2 {
+    max-width: 860px;
+    font-size: clamp(42px, 4.2vw, 60px) !important;
+    line-height: 1.03 !important;
+}
+
+.section-hero-1 .text-300 {
+    max-width: 720px;
+    color: #374151 !important;
+    font-size: 17px;
+    line-height: 1.72;
+}
+
+.section-hero-1 .shape-1 img.position-relative {
+    max-height: min(72vh, 680px);
+    max-width: min(36vw, 560px);
+    width: auto;
+    object-fit: contain;
+}
+
+.section-projects-2 {
+    padding-top: 36px !important;
+    padding-bottom: 42px;
+}
+
+.section-projects-2 .box-linear-animation > .position-relative {
+    padding: clamp(22px, 2.5vw, 36px) !important;
+}
+
+.section-projects-2 h3 {
+    margin-bottom: 0;
+    font-size: clamp(30px, 3.1vw, 46px);
+    line-height: 1.05;
+}
+
+.section-projects-2 .swiper {
+    padding-bottom: 0 !important;
+}
+
+.section-projects-2 .swiper-slide > .border {
+    min-height: 430px;
+    margin-top: 24px !important;
+    padding: clamp(18px, 2.2vw, 28px) !important;
+}
+
+.section-projects-2 .row {
+    align-items: center;
+}
+
+.section-projects-2 img.w-100 {
+    max-height: 352px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.section-projects-2 h4 {
+    font-size: clamp(24px, 2.2vw, 34px);
+    line-height: 1.12;
+}
+
+.section-projects-2 p {
+    line-height: 1.58;
+}
+
+.section-projects-2 ul.mt-4 {
+    margin-top: 18px !important;
+}
+
+.section-projects-2 li.mb-3 {
+    margin-bottom: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.section-projects-2 .mt-7 {
+    margin-top: 22px !important;
+}
+
+.section-projects-2 .position-absolute.bottom-0.end-0 {
+    padding-right: 30px !important;
+    padding-bottom: 24px !important;
+}
+
+.poligonium-vfx-showreel {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    padding: clamp(126px, 12vw, 164px) 0 78px;
+    color: #22252a;
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, .055) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(17, 24, 39, .055) 1px, transparent 1px),
+        #fbfaf8;
+    background-size: 36px 36px, 36px 36px, auto;
+    background-color: #fbfaf8;
+    animation: poligoniumVfxGrid 18s linear infinite;
+}
+
+.poligonium-vfx-showreel::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 16% 18%, rgba(249, 115, 22, .14), transparent 26%),
+        radial-gradient(circle at 82% 16%, rgba(20, 184, 166, .13), transparent 24%),
+        radial-gradient(circle at 52% 86%, rgba(59, 130, 246, .1), transparent 30%);
+}
+
+.poligonium-vfx-showreel__scene span,
+.poligonium-vfx-showreel__scene i {
+    position: absolute;
+    pointer-events: none;
+}
+
+.poligonium-vfx-showreel__scene span {
+    top: 110px;
+    right: 8vw;
+    width: 240px;
+    height: 240px;
+    border: 1px solid rgba(17, 24, 39, .13);
+    border-radius: 50%;
+    box-shadow: inset 0 0 48px rgba(20, 184, 166, .08), 0 0 80px rgba(17, 24, 39, .04);
+    animation: poligoniumVfxOrbit 14s linear infinite;
+}
+
+.poligonium-vfx-showreel__scene span::before,
+.poligonium-vfx-showreel__scene span::after {
+    position: absolute;
+    content: "";
+    border-radius: inherit;
+}
+
+.poligonium-vfx-showreel__scene span::before {
+    inset: 48px;
+    border: 1px dashed rgba(17, 24, 39, .14);
+}
+
+.poligonium-vfx-showreel__scene span::after {
+    top: 22px;
+    left: 42px;
+    width: 16px;
+    height: 16px;
+    background: #f97316;
+    box-shadow: 0 0 24px rgba(249, 115, 22, .65);
+}
+
+.poligonium-vfx-showreel__scene i {
+    left: 6vw;
+    bottom: 92px;
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgba(17, 24, 39, .12);
+    transform: rotate(18deg);
+    background: rgba(255, 255, 255, .38);
+    animation: poligoniumVfxFloat 6s ease-in-out infinite;
+}
+
+.poligonium-vfx-showreel__wrap {
+    position: relative;
+    z-index: 1;
+    width: min(1480px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.poligonium-vfx-showreel__head {
+    display: grid;
+    grid-template-columns: minmax(0, .94fr) minmax(280px, .42fr);
+    gap: clamp(18px, 4vw, 64px);
+    align-items: end;
+    padding: clamp(20px, 3.2vw, 36px);
+    margin-bottom: clamp(24px, 4vw, 46px);
+    border: 1px solid rgba(17, 24, 39, .1);
+    border-radius: 18px;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255, 255, 255, .04) 1px, transparent 1px),
+        linear-gradient(135deg, rgba(31, 41, 55, .98), rgba(7, 9, 15, .94));
+    background-size: 28px 28px, 28px 28px, auto;
+    box-shadow: 0 24px 64px rgba(17, 24, 39, .18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.poligonium-vfx-showreel .poligonium-section-kicker {
+    color: #86efac;
+}
+
+.poligonium-vfx-showreel .poligonium-vfx-showreel__head h1 {
+    max-width: 980px;
+    margin: 12px 0 0;
+    color: #fff !important;
+    font-size: clamp(42px, 5.8vw, 88px);
+    line-height: .96;
+}
+
+.poligonium-vfx-showreel .poligonium-vfx-showreel__head p {
+    margin: 0;
+    color: rgba(249, 250, 251, .76) !important;
+    font-size: 17px;
+    line-height: 1.72;
+}
+
+.poligonium-vfx-showreel__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.poligonium-vfx-card {
+    position: relative;
+    min-height: clamp(320px, 31vw, 460px);
+    animation: poligoniumVfxCardIn .7s ease both;
+    animation-delay: calc(var(--vfx-index, 0) * 90ms);
+}
+
+.poligonium-vfx-card > a {
+    position: relative;
+    display: block;
+    height: 100%;
+    min-height: inherit;
+    overflow: hidden;
+    color: inherit;
+    border: 1px solid rgba(17, 24, 39, .12);
+    border-radius: 18px;
+    background: #12151d;
+    box-shadow: 0 26px 70px rgba(17, 24, 39, .18);
+    transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+
+.poligonium-vfx-card > a::before {
+    position: absolute;
+    inset: -42% auto -42% -58%;
+    z-index: 2;
+    width: 42%;
+    content: "";
+    pointer-events: none;
+    background: linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, .08) 32%, rgba(255, 255, 255, .44) 48%, rgba(255, 255, 255, .12) 62%, transparent 100%);
+    filter: blur(.2px);
+    transform: translateX(0) skewX(-18deg);
+    opacity: 0;
+}
+
+.poligonium-vfx-card > a.is-disabled {
+    cursor: default;
+}
+
+.poligonium-vfx-card > a:hover {
+    border-color: rgba(249, 115, 22, .38);
+    box-shadow: 0 34px 92px rgba(17, 24, 39, .24);
+    transform: translateY(-8px);
+}
+
+.poligonium-vfx-card > a:hover::before {
+    animation: poligoniumVfxShine .9s ease forwards;
+}
+
+.poligonium-vfx-card__media {
+    position: absolute;
+    inset: 0;
+}
+
+.poligonium-vfx-card__media::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background:
+        linear-gradient(90deg, rgba(7, 9, 14, .92) 0%, rgba(7, 9, 14, .62) 45%, rgba(7, 9, 14, .2) 100%),
+        linear-gradient(0deg, rgba(7, 9, 14, .84), transparent 58%);
+    transition: opacity .28s ease;
+}
+
+.poligonium-vfx-card:hover .poligonium-vfx-card__media::after {
+    opacity: .72;
+}
+
+.poligonium-vfx-card__media img,
+.poligonium-vfx-card__media video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.02);
+    transition: opacity .28s ease, transform .42s ease;
+}
+
+.poligonium-vfx-card__media video {
+    opacity: 0;
+}
+
+.poligonium-vfx-card:hover .poligonium-vfx-card__media img {
+    opacity: .18;
+    transform: scale(1.07);
+}
+
+.poligonium-vfx-card:hover .poligonium-vfx-card__media video {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.poligonium-vfx-card__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: inherit;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: clamp(22px, 3vw, 38px);
+}
+
+.poligonium-vfx-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.poligonium-vfx-card__meta span,
+.poligonium-vfx-card__meta small,
+.poligonium-vfx-card li {
+    color: rgba(249, 250, 251, .86);
+    font-size: 12px;
+    font-weight: 800;
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .09);
+}
+
+.poligonium-vfx-card__meta span,
+.poligonium-vfx-card__meta small {
+    padding: 7px 11px;
+}
+
+.poligonium-vfx-card h2 {
+    max-width: 680px;
+    margin: 0;
+    color: #fff !important;
+    font-size: clamp(28px, 3vw, 48px);
+    line-height: 1.02;
+}
+
+.poligonium-vfx-card p {
+    max-width: 650px;
+    margin: 14px 0 0;
+    color: rgba(249, 250, 251, .76);
+    line-height: 1.65;
+}
+
+.poligonium-vfx-card ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.poligonium-vfx-card li {
+    padding: 7px 10px;
+}
+
+.poligonium-vfx-showreel__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.poligonium-vfx-showreel__cta a {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    padding: 14px 20px;
+    color: #111827;
+    font-weight: 900;
+    border: 1px solid rgba(17, 24, 39, .12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .72);
+    box-shadow: 0 16px 44px rgba(17, 24, 39, .1);
+}
+
+.poligonium-vfx-showreel__cta span {
+    color: #f97316;
+    transition: transform .22s ease;
+}
+
+.poligonium-vfx-showreel__cta a:hover span {
+    transform: translateX(4px);
+}
+
+.poligonium-vfx-modal[hidden] {
+    display: none;
+}
+
+.poligonium-vfx-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.poligonium-vfx-modal-open,
+.poligonium-vfx-modal-open body {
+    overflow: hidden;
+}
+
+.poligonium-vfx-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 5, 10, .82);
+    backdrop-filter: blur(16px);
+}
+
+.poligonium-vfx-modal__dialog {
+    position: relative;
+    width: min(1180px, 100%);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 20px;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255, 255, 255, .045) 1px, transparent 1px),
+        rgba(8, 11, 18, .96);
+    background-size: 28px 28px, 28px 28px, auto;
+    box-shadow: 0 42px 120px rgba(0, 0, 0, .58);
+    animation: poligoniumVfxModalIn .24s ease both;
+}
+
+.poligonium-vfx-modal__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 3;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    color: #f9fafb;
+    font-size: 26px;
+    line-height: 1;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 50%;
+    background: rgba(8, 11, 18, .72);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.poligonium-vfx-modal__close:hover {
+    background: rgba(249, 115, 22, .9);
+    transform: rotate(90deg);
+}
+
+.poligonium-vfx-modal__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    display: grid;
+    width: 52px;
+    height: 74px;
+    place-items: center;
+    color: #fff;
+    font-size: 54px;
+    font-weight: 300;
+    line-height: 1;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 12px;
+    background: rgba(8, 11, 18, .58);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .26);
+    transform: translateY(-50%);
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.poligonium-vfx-modal__arrow:hover {
+    border-color: rgba(249, 115, 22, .72);
+    background: rgba(249, 115, 22, .88);
+}
+
+.poligonium-vfx-modal__arrow--prev {
+    left: 18px;
+}
+
+.poligonium-vfx-modal__arrow--next {
+    right: 18px;
+}
+
+.poligonium-vfx-modal__arrow--prev:hover {
+    transform: translate(-2px, -50%);
+}
+
+.poligonium-vfx-modal__arrow--next:hover {
+    transform: translate(2px, -50%);
+}
+
+.poligonium-vfx-modal__video {
+    position: relative;
+    display: grid;
+    min-height: min(66vh, 720px);
+    place-items: center;
+    background: #000;
+}
+
+.poligonium-vfx-modal__video video {
+    width: 100%;
+    max-height: min(66vh, 720px);
+    background: #000;
+    object-fit: contain;
+}
+
+.poligonium-vfx-modal__bar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px clamp(18px, 3vw, 30px);
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    background: rgba(8, 11, 18, .74);
+}
+
+.poligonium-vfx-modal__bar span {
+    display: inline-flex;
+    margin-bottom: 6px;
+    color: #86efac;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.poligonium-vfx-modal__bar h3 {
+    margin: 0;
+    color: #fff !important;
+    font-size: clamp(24px, 3vw, 42px);
+    line-height: 1.05;
+}
+
+.poligonium-vfx-modal__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.poligonium-vfx-modal__actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 11px 22px;
+    color: #111827;
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    border: 1px solid #f97316;
+    border-radius: 8px;
+    background: #f97316;
+    box-shadow: none;
+    transition: color .18s ease, transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.poligonium-vfx-modal__actions a:hover {
+    color: #111827;
+    border-color: #fb923c;
+    background: #fb923c;
+    transform: translateY(-1px);
+}
+
+@keyframes poligoniumVfxCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes poligoniumVfxGrid {
+    0% {
+        background-position: 0 0, 0 0, 0 0;
+    }
+
+    100% {
+        background-position: 36px 36px, 36px 36px, 0 0;
+    }
+}
+
+@keyframes poligoniumVfxShine {
+    0% {
+        opacity: 0;
+        transform: translateX(0) skewX(-18deg);
+    }
+
+    18% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(380%) skewX(-18deg);
+    }
+}
+
+@keyframes poligoniumVfxOrbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes poligoniumVfxFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(18deg);
+    }
+
+    50% {
+        transform: translateY(-16px) rotate(26deg);
+    }
+}
+
+@keyframes poligoniumVfxModalIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.poligonium-directions-lab {
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 78px;
+}
+
+.poligonium-directions-lab::before {
+    position: absolute;
+    inset: -110px 0 auto;
+    height: 420px;
+    content: "";
+    background:
+        radial-gradient(circle at 18% 24%, rgba(110, 78, 242, .14), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(20, 184, 166, .14), transparent 26%),
+        linear-gradient(90deg, rgba(17, 24, 39, .045) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(17, 24, 39, .045) 1px, transparent 1px);
+    background-size: auto, auto, 32px 32px, 32px 32px;
+    pointer-events: none;
+}
+
+.poligonium-directions-panel {
+    position: relative;
+    overflow: hidden;
+    width: min(1640px, calc(100% - 40px));
+    margin: -34px auto 0;
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 18px;
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, .05) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(17, 24, 39, .05) 1px, transparent 1px),
+        rgba(255, 255, 255, .8);
+    background-size: 34px 34px, 34px 34px, auto;
+    box-shadow: 0 24px 80px rgba(17, 24, 39, .1);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    animation: poligoniumGridDrift 18s linear infinite;
+}
+
+.poligonium-directions-panel::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background:
+        radial-gradient(circle at 12% 12%, rgba(110, 78, 242, .14), transparent 26%),
+        radial-gradient(circle at 88% 12%, rgba(20, 184, 166, .14), transparent 24%),
+        radial-gradient(circle at 48% 96%, rgba(245, 158, 11, .12), transparent 28%);
+    pointer-events: none;
+}
+
+.poligonium-directions-panel::after {
+    position: absolute;
+    inset: 16px;
+    content: "";
+    border: 1px solid rgba(17, 24, 39, .06);
+    border-radius: 14px;
+    pointer-events: none;
+}
+
+.poligonium-directions-content {
+    position: relative;
+    z-index: 1;
+    padding: clamp(24px, 3.4vw, 48px);
+}
+
+.poligonium-directions-head {
+    display: grid;
+    grid-template-columns: minmax(0, .86fr) minmax(280px, .44fr);
+    gap: clamp(18px, 3vw, 42px);
+    align-items: end;
+    margin-bottom: 24px;
+}
+
+.poligonium-directions-title {
+    margin: 8px 0 0;
+    color: #111827;
+    font-size: clamp(34px, 4vw, 64px);
+    line-height: .98;
+}
+
+.poligonium-directions-summary {
+    margin: 0;
+    color: #4b5563;
+    font-size: 16px;
+    line-height: 1.72;
+}
+
+.poligonium-directions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.poligonium-direction-card {
+    --direction-color: var(--primary-color);
+    position: relative;
+    display: flex;
+    min-height: 330px;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, .09);
+    border-radius: 14px;
+    background:
+        linear-gradient(90deg, rgba(17, 24, 39, .045) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(17, 24, 39, .045) 1px, transparent 1px),
+        linear-gradient(135deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, .62));
+    background-size: 26px 26px, 26px 26px, auto;
+    padding: clamp(20px, 2.2vw, 28px);
+    box-shadow: 0 18px 46px rgba(17, 24, 39, .08);
+    transition: transform .26s ease, border-color .26s ease, box-shadow .26s ease;
+}
+
+.poligonium-direction-card::before {
+    position: absolute;
+    inset: -70px -54px auto auto;
+    width: 184px;
+    height: 184px;
+    content: "";
+    border: 1px solid color-mix(in srgb, var(--direction-color) 42%, transparent);
+    border-radius: 50%;
+    opacity: .72;
+    animation: poligoniumOrbitSpin 15s linear infinite;
+}
+
+.poligonium-direction-card::after {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    width: 42px;
+    height: 42px;
+    content: "";
+    border: 1px solid color-mix(in srgb, var(--direction-color) 34%, transparent);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--direction-color) 10%, transparent);
+    transform: rotate(12deg);
+    animation: poligoniumCubeFloat 6.6s ease-in-out infinite;
+}
+
+.poligonium-direction-card:hover {
+    border-color: color-mix(in srgb, var(--direction-color) 42%, transparent);
+    box-shadow: 0 26px 62px rgba(17, 24, 39, .13);
+    transform: translateY(-8px);
+}
+
+.poligonium-direction-card.is-studio {
+    --direction-color: #6e4ef2;
+}
+
+.poligonium-direction-card.is-school {
+    --direction-color: #0f9f8f;
+}
+
+.poligonium-direction-card.is-originals {
+    --direction-color: #f97316;
+}
+
+.poligonium-direction-top {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 32px;
+}
+
+.poligonium-direction-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid color-mix(in srgb, var(--direction-color) 28%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--direction-color) 10%, white);
+    padding: 7px 12px;
+    color: #111827;
+    font-size: 13px;
+    font-weight: 850;
+}
+
+.poligonium-direction-icon {
+    display: inline-grid;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--direction-color) 34%, transparent);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .82);
+    color: var(--direction-color);
+    font-size: 23px;
+    box-shadow: 0 12px 28px color-mix(in srgb, var(--direction-color) 16%, transparent);
+}
+
+.poligonium-direction-title {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #111827;
+    font-size: clamp(26px, 2.1vw, 36px);
+    line-height: 1.05;
+}
+
+.poligonium-direction-text {
+    position: relative;
+    z-index: 1;
+    margin: 14px 0 22px;
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.poligonium-direction-tags {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding: 0;
+    list-style: none;
+}
+
+.poligonium-direction-tags li {
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .66);
+    padding: 7px 10px;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.poligonium-direction-link {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+    color: #111827;
+    font-weight: 900;
+}
+
+.poligonium-direction-link span {
+    color: var(--direction-color);
+    transition: transform .22s ease;
+}
+
+.poligonium-direction-link:hover span {
+    transform: translateX(4px);
+}
+
+html[data-bs-theme="dark"] .poligonium-animated-panel,
+html[data-bs-theme="dark"] .poligonium-service-card,
+html[data-bs-theme="dark"] .poligonium-experience-chip,
+html[data-bs-theme="dark"] .poligonium-experience-role,
+html[data-bs-theme="dark"] .poligonium-resume-card,
+html[data-bs-theme="dark"] .poligonium-timeline-item,
+html[data-bs-theme="dark"] .poligonium-service-note,
+html[data-bs-theme="dark"] .poligonium-directions-panel,
+html[data-bs-theme="dark"] .poligonium-direction-card {
+    background-color: rgba(24, 24, 30, .78);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+html[data-bs-theme="dark"] .poligonium-service-title,
+html[data-bs-theme="dark"] .poligonium-service-title a,
+html[data-bs-theme="dark"] .poligonium-service-link,
+html[data-bs-theme="dark"] .poligonium-experience-title,
+html[data-bs-theme="dark"] .poligonium-experience-chip h5,
+html[data-bs-theme="dark"] .poligonium-resume-head h3,
+html[data-bs-theme="dark"] .poligonium-timeline-title,
+html[data-bs-theme="dark"] .poligonium-directions-title,
+html[data-bs-theme="dark"] .poligonium-direction-title,
+html[data-bs-theme="dark"] .poligonium-direction-link,
+html[data-bs-theme="dark"] .poligonium-direction-label {
+    color: #f9fafb;
+}
+
+html[data-bs-theme="dark"] .poligonium-service-text,
+html[data-bs-theme="dark"] .poligonium-experience-role li,
+html[data-bs-theme="dark"] .poligonium-experience-skills span,
+html[data-bs-theme="dark"] .poligonium-directions-summary,
+html[data-bs-theme="dark"] .poligonium-direction-text,
+html[data-bs-theme="dark"] .poligonium-direction-tags li {
+    color: #c7c7d1;
+}
+
+html[data-bs-theme="dark"] .poligonium-direction-icon,
+html[data-bs-theme="dark"] .poligonium-direction-tags li {
+    background: rgba(255, 255, 255, .07);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+html[data-bs-theme="dark"] .section-hero-1 .text-300 {
+    color: #d1d5db !important;
+}
+
+@keyframes poligoniumGridDrift {
+    0% {
+        background-position: 0 0, 0 0, 0 0;
+    }
+    100% {
+        background-position: 34px 34px, 34px 34px, 0 0;
+    }
+}
+
+@keyframes poligoniumCubeFloat {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate3d(1, 1, 0, 18deg);
+    }
+    50% {
+        transform: translate3d(0, -18px, 0) rotate3d(1, 1, 0, 42deg);
+    }
+}
+
+@keyframes poligoniumOrbitSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .poligonium-service-grid,
+    .poligonium-directions-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .poligonium-directions-head {
+        grid-template-columns: 1fr;
+    }
+
+    .poligonium-vfx-showreel__head {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .section-hero-1 .col-lg-6 {
+        width: 68%;
+        padding-left: clamp(132px, 11vw, 168px);
+    }
+
+    .section-hero-1 .shape-1 {
+        right: calc(clamp(-180px, -8vw, -96px) + 60px) !important;
+        left: auto !important;
+        max-width: min(42vw, 620px);
+    }
+
+    .poligonium-directions-content {
+        padding-left: clamp(132px, 11vw, 156px);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .poligonium-service-grid,
+    .poligonium-directions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .poligonium-vfx-showreel__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .poligonium-vfx-modal__bar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .poligonium-vfx-modal__actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .poligonium-vfx-modal__arrow {
+        width: 44px;
+        height: 58px;
+        font-size: 42px;
+    }
+
+    .poligonium-vfx-modal__arrow--prev {
+        left: 10px;
+    }
+
+    .poligonium-vfx-modal__arrow--next {
+        right: 10px;
+    }
+
+    .poligonium-service-card {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .poligonium-service-lab,
+    .poligonium-experience-lab,
+    .poligonium-resume-lab,
+    .poligonium-directions-lab,
+    .poligonium-vfx-showreel {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .poligonium-animated-panel::after,
+    .poligonium-floating-cube,
+    .poligonium-orbit,
+    .poligonium-vfx-showreel__scene {
+        display: none;
+    }
+
+    .poligonium-vfx-showreel__wrap {
+        width: min(100% - 24px, 1480px);
+    }
+
+    .poligonium-vfx-modal {
+        padding: 10px;
+    }
+
+    .poligonium-vfx-modal__dialog {
+        border-radius: 14px;
+    }
+
+    .poligonium-vfx-modal__video {
+        min-height: 48vh;
+    }
+
+    .poligonium-vfx-modal__video video {
+        max-height: 48vh;
+    }
+
+    .poligonium-vfx-modal__actions a {
+        width: 100%;
+    }
+
+    .poligonium-service-title {
+        max-width: 100%;
+    }
+
+    .poligonium-resume-card::before {
+        left: 24px;
+    }
+
+    .poligonium-directions-panel {
+        width: min(100% - 24px, 1640px);
+        margin-top: -20px;
+    }
+
+    .poligonium-directions-content {
+        padding: 22px;
+    }
+
+    .poligonium-direction-card {
+        min-height: 0;
+    }
+
+    .section-hero-1 h1.ds-2 {
+        font-size: clamp(38px, 11vw, 52px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .poligonium-animated-panel,
+    .poligonium-floating-cube,
+    .poligonium-orbit,
+    .poligonium-vfx-showreel,
+    .poligonium-vfx-card,
+    .poligonium-vfx-modal__dialog,
+    .poligonium-vfx-showreel__scene span,
+    .poligonium-vfx-showreel__scene i,
+    .poligonium-directions-panel,
+    .poligonium-direction-card::before,
+    .poligonium-direction-card::after {
+        animation: none;
+    }
+
+    .poligonium-service-card,
+    .poligonium-experience-chip,
+    .poligonium-timeline-item,
+    .poligonium-service-card::before,
+    .poligonium-service-card::after,
+    .poligonium-service-link,
+    .poligonium-direction-card,
+    .poligonium-direction-link span {
+        transition: none;
+    }
+}
