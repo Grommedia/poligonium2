@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+echo "== PHP =="
+php -v | head -n 1
+
+echo
+echo "== Laravel =="
+php artisan about | sed -n '/Environment/,$p' | head -n 35
+
+echo
+echo "== Public storage =="
+if [ -L public/storage ]; then
+    ls -la public/storage
+else
+    echo "public/storage is not a symlink"
+fi
+
+for path in "storage/main/i-am-4.png" "storage/main/fav.png" "robots.txt" "sitemap.xml"; do
+    echo
+    echo "== https://poligonium.com/$path =="
+    curl -L -o /dev/null -s -w "HTTP:%{http_code} TOTAL:%{time_total} SIZE:%{size_download}\n" "https://poligonium.com/$path"
+done
+
+echo
+echo "== Page timings =="
+for path in "" "portfolio" "vfx-showreel" "courses" "admin/login"; do
+    curl -L -o /dev/null -s -w "/$path HTTP:%{http_code} TOTAL:%{time_total} SIZE:%{size_download}\n" "https://poligonium.com/$path"
+done
+
+echo
+echo "== Recent Laravel errors =="
+latest_log="$(ls -1t storage/logs/laravel-*.log 2>/dev/null | head -n 1 || true)"
+if [ -n "$latest_log" ]; then
+    tail -n 80 "$latest_log"
+else
+    echo "No daily Laravel log found."
+fi

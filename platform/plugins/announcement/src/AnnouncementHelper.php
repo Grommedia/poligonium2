@@ -7,6 +7,7 @@ use ArchiElite\Announcement\Enums\TextAlignment;
 use ArchiElite\Announcement\Models\Announcement;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Cache;
 
 class AnnouncementHelper
 {
@@ -49,14 +50,20 @@ class AnnouncementHelper
     public static function getAnnouncements(): Collection
     {
         $dismissedAnnouncements = json_decode($_COOKIE['ae-anno-dismissed-announcements'] ?? '[]', true);
+        $dismissedAnnouncements = is_array($dismissedAnnouncements) ? $dismissedAnnouncements : [];
         $dismissedAnnouncements = Arr::flatten($dismissedAnnouncements);
+        sort($dismissedAnnouncements);
 
-        // @phpstan-ignore-next-line
-        return Announcement::query()
-            ->whereNotIn('id', $dismissedAnnouncements)
-            ->available()
-            ->inRandomOrder()
-            ->get();
+        $cacheKey = 'poligonium_announcements_public_' . md5(implode(',', $dismissedAnnouncements));
+
+        return Cache::remember($cacheKey, now()->addMinutes(5), function () use ($dismissedAnnouncements): Collection {
+            // @phpstan-ignore-next-line
+            return Announcement::query()
+                ->whereNotIn('id', $dismissedAnnouncements)
+                ->available()
+                ->inRandomOrder()
+                ->get();
+        });
     }
 
     public static function isLazyLoadingEnabled(): bool

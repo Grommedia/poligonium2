@@ -121,6 +121,9 @@ php artisan view:clear
 php artisan cache:clear
 php artisan config:cache
 php artisan route:cache
+php artisan view:cache
+php artisan event:cache
+php artisan optimize
 ```
 
 Set writable permissions:
@@ -151,13 +154,33 @@ git pull origin main
 composer install --no-dev --optimize-autoloader
 php artisan migrate --force
 php artisan cms:publish:assets
-php artisan config:clear
-php artisan route:clear
-php artisan view:clear
-php artisan cache:clear
+php artisan optimize:clear
 php artisan config:cache
 php artisan route:cache
+php artisan view:cache
+php artisan event:cache
+php artisan optimize
 ```
+
+Or run the bundled HOSTiQ optimization script:
+
+```bash
+bash tools/hostiq-optimize.sh
+```
+
+To measure the server state before or after optimization:
+
+```bash
+bash tools/hostiq-diagnose.sh
+```
+
+## Performance Checklist
+
+- `php artisan about` must show `Config CACHED`, `Routes CACHED`, and `Views CACHED`.
+- `public/storage` must be a symlink to `storage/app/public`.
+- Static files under `/storage`, `/themes`, and `/vendor` should return `200` directly with a long `Cache-Control` header.
+- Missing media files must not produce repeated Laravel exceptions in `storage/logs`.
+- Do not run `npm run build` on shared hosting unless it is absolutely necessary; build frontend assets locally and deploy the result.
 
 ## Smoke Test
 
