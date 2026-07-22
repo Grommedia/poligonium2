@@ -190,7 +190,9 @@ bash tools/hostiq-diagnose.sh
 - Static files under `/storage`, `/themes`, and `/vendor` should return `200` directly with a long `Cache-Control` header.
 - Missing media files must not produce repeated Laravel exceptions in `storage/logs`.
 - Public guest pages can use the safe HTML cache controlled by `POLIGONIUM_PUBLIC_PAGE_CACHE=true`.
-- The public page cache intentionally skips admin, school cabinet, login/register, POST routes, JSON/AJAX routes, and pages containing forms or CSRF tokens.
+- Public HTML can also be warmed into `public/page-cache` and served by LiteSpeed without booting Laravel when `POLIGONIUM_STATIC_PAGE_CACHE=true`.
+- The public page cache intentionally skips admin, school cabinet, login/register, POST routes, JSON/AJAX routes, and sensitive/token pages. The homepage contact form requests a fresh CSRF token before submit, so it can still work from cached HTML.
+- After editing public content in the admin panel, run `bash tools/hostiq-optimize.sh` or clear `public/page-cache` so visitors do not see stale cached HTML.
 - Public media markup is optimized automatically when `POLIGONIUM_OPTIMIZE_MEDIA_LOADING=true`: early images load eagerly, lower images load lazily, iframes are lazy, and videos preload metadata only.
 - Do not run `npm run build` on shared hosting unless it is absolutely necessary; build frontend assets locally and deploy the result.
 
@@ -199,7 +201,7 @@ bash tools/hostiq-diagnose.sh
 Check these pages after deploy:
 
 - `https://poligonium.com/`
-- `https://poligonium.com/portfolio`
+- `https://poligonium.com/projects/crm-system`
 - `https://poligonium.com/vfx-showreel`
 - `https://poligonium.com/courses`
 - `https://poligonium.com/school/login`

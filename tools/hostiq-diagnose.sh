@@ -47,7 +47,17 @@ echo
 echo "== Optimization headers =="
 for path in "" "vfx-showreel" "courses"; do
     echo "-- /$path --"
-    curl -L -s -D - -o /dev/null "https://poligonium.com/$path" | grep -i "x-poligonium" || true
+    curl -L -s -D - -o /dev/null "https://poligonium.com/$path" | grep -i "x-poligonium\\|cache-control" || true
+done
+
+echo
+echo "== Static page cache files =="
+for file in "public/page-cache/__root/index.html" "public/page-cache/vfx-showreel/index.html" "public/page-cache/courses/index.html"; do
+    if [ -e "$file" ]; then
+        ls -la "$file"
+    else
+        echo "MISSING $file"
+    fi
 done
 
 echo

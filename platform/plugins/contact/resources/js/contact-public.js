@@ -10,6 +10,21 @@ $(() => {
         return ''
     }
 
+    let ensureCsrfToken = function () {
+        const existingToken = getCookie('XSRF-TOKEN')
+
+        if (existingToken) {
+            return $.Deferred().resolve(existingToken).promise()
+        }
+
+        return $.ajax({
+            type: 'GET',
+            cache: false,
+            url: '/poligonium/csrf-token',
+            dataType: 'json',
+        }).then((response) => getCookie('XSRF-TOKEN') || response.token || '')
+    }
+
     let showError = function (message) {
         $('.contact-error-message').html(message).show()
     }
@@ -63,45 +78,52 @@ $(() => {
         $('.contact-success-message').html('').hide()
         $('.contact-error-message').html('').hide()
 
-        const formData = new FormData($form[0])
-        const xsrfToken = getCookie('XSRF-TOKEN')
-        const headers = {}
+        $button.addClass('button-loading')
 
-        if (xsrfToken) {
-            formData.delete('_token')
-            headers['X-XSRF-TOKEN'] = xsrfToken
-        }
+        ensureCsrfToken()
+            .done((xsrfToken) => {
+                const formData = new FormData($form[0])
+                const headers = {}
 
-        $.ajax({
-            type: 'POST',
-            cache: false,
-            url: $form.prop('action'),
-            headers,
-            data: formData,
-            contentType: false,
-            processData: false,
-            beforeSend: () => $button.addClass('button-loading'),
-            success: ({ error, message }) => {
-                if (!error) {
-                    $form[0].reset()
-                    showSuccess(message)
-                } else {
-                    showError(message)
+                if (xsrfToken) {
+                    formData.delete('_token')
+                    headers['X-XSRF-TOKEN'] = xsrfToken
                 }
 
-                if (typeof refreshRecaptcha !== 'undefined') {
-                    refreshRecaptcha()
-                }
+                $.ajax({
+                    type: 'POST',
+                    cache: false,
+                    url: $form.prop('action'),
+                    headers,
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: ({ error, message }) => {
+                        if (!error) {
+                            $form[0].reset()
+                            showSuccess(message)
+                        } else {
+                            showError(message)
+                        }
 
-                document.dispatchEvent(new CustomEvent('contact-form.submitted'))
-            },
-            error: (error) => {
-                if (typeof refreshRecaptcha !== 'undefined') {
-                    refreshRecaptcha()
-                }
+                        if (typeof refreshRecaptcha !== 'undefined') {
+                            refreshRecaptcha()
+                        }
+
+                        document.dispatchEvent(new CustomEvent('contact-form.submitted'))
+                    },
+                    error: (error) => {
+                        if (typeof refreshRecaptcha !== 'undefined') {
+                            refreshRecaptcha()
+                        }
+                        handleError(error)
+                    },
+                    complete: () => $button.removeClass('button-loading'),
+                })
+            })
+            .fail((error) => {
+                $button.removeClass('button-loading')
                 handleError(error)
-            },
-            complete: () => $button.removeClass('button-loading'),
-        })
+            })
     })
 })

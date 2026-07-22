@@ -17,6 +17,20 @@
     RewriteCond %{HTTP:x-xsrf-token} .
     RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
 
+    # Serve warmed public HTML without booting Laravel for anonymous visitors.
+    RewriteCond %{REQUEST_METHOD} GET
+    RewriteCond %{QUERY_STRING} ^$
+    RewriteCond %{HTTP:Cookie} !(botble_session|laravel_session|XSRF-TOKEN) [NC]
+    RewriteCond %{DOCUMENT_ROOT}/page-cache/__root/index.html -f
+    RewriteRule ^$ page-cache/__root/index.html [L]
+
+    RewriteCond %{REQUEST_METHOD} GET
+    RewriteCond %{QUERY_STRING} ^$
+    RewriteCond %{HTTP:Cookie} !(botble_session|laravel_session|XSRF-TOKEN) [NC]
+    RewriteCond %{REQUEST_URI} !^/(admin|api|ajax|install|school|login|logout|register|storage|themes|vendor|sanctum|page-cache|poligonium/csrf-token)(/|$) [NC]
+    RewriteCond %{DOCUMENT_ROOT}/page-cache/$1/index.html -f
+    RewriteRule ^(.+)$ page-cache/$1/index.html [L]
+
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
@@ -55,6 +69,11 @@
 
     <FilesMatch "\.(html?|php)$">
         Header set Cache-Control "no-cache, private"
+    </FilesMatch>
+
+    <FilesMatch "^index\.html$">
+        Header set X-Poligonium-Static-Cache "HIT"
+        Header set Cache-Control "public, max-age=300"
     </FilesMatch>
 </IfModule>
 

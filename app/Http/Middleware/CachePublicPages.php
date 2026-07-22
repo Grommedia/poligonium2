@@ -31,6 +31,7 @@ class CachePublicPages
         if ($this->canStore($request, $response)) {
             File::ensureDirectoryExists(dirname($cachePath));
             File::put($cachePath, $response->getContent());
+            $this->storeStaticCache($request, $response->getContent());
             $response->headers->set('X-Poligonium-Page-Cache', 'MISS');
         }
 
@@ -67,6 +68,7 @@ class CachePublicPages
             'school*',
             'login*',
             'logout*',
+            'poligonium/csrf-token',
             'register*',
             'storage*',
             'themes*',
@@ -114,6 +116,35 @@ class CachePublicPages
         $key = sha1($request->getSchemeAndHttpHost() . '|' . $request->fullUrl() . '|' . $locale);
 
         return storage_path("framework/page-cache/$key.html");
+    }
+
+    private function storeStaticCache(Request $request, string $content): void
+    {
+        if (! (bool) env('POLIGONIUM_STATIC_PAGE_CACHE', true)) {
+            return;
+        }
+
+        if ($request->getQueryString()) {
+            return;
+        }
+
+        $path = $this->staticCachePath($request);
+
+        File::ensureDirectoryExists(dirname($path));
+        File::put($path, $content);
+    }
+
+    private function staticCachePath(Request $request): string
+    {
+        $path = trim($request->getPathInfo(), '/');
+
+        if ($path === '') {
+            $path = '__root';
+        }
+
+        $path = preg_replace('~[^A-Za-z0-9/_\-.]~', '-', $path);
+
+        return public_path("page-cache/$path/index.html");
     }
 
     private function isFresh(string $path): bool
