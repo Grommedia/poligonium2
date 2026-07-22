@@ -189,6 +189,8 @@ bash tools/hostiq-diagnose.sh
 - `public/storage` must be a symlink to `storage/app/public`.
 - Static files under `/storage`, `/themes`, and `/vendor` should return `200` directly with a long `Cache-Control` header.
 - Missing media files must not produce repeated Laravel exceptions in `storage/logs`.
+- Public guest pages can use the safe HTML cache controlled by `POLIGONIUM_PUBLIC_PAGE_CACHE=true`.
+- The public page cache intentionally skips admin, school cabinet, login/register, POST routes, JSON/AJAX routes, and pages containing forms or CSRF tokens.
 - Do not run `npm run build` on shared hosting unless it is absolutely necessary; build frontend assets locally and deploy the result.
 
 ## Smoke Test

@@ -10,6 +10,8 @@ php artisan storage:link --force
 php artisan cms:publish:assets
 
 php artisan optimize:clear
+rm -rf storage/framework/page-cache
+mkdir -p storage/framework/page-cache
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache

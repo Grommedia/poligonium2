@@ -36,8 +36,11 @@ done
 
 echo
 echo "== Page timings =="
-for path in "" "portfolio" "vfx-showreel" "courses" "admin/login"; do
-    curl -L -o /dev/null -s -w "/$path HTTP:%{http_code} TOTAL:%{time_total} SIZE:%{size_download}\n" "https://poligonium.com/$path"
+for pass in 1 2; do
+    echo "-- pass $pass --"
+    for path in "" "portfolio" "vfx-showreel" "courses" "admin/login"; do
+        curl -L -o /dev/null -s -w "/$path HTTP:%{http_code} TOTAL:%{time_total} SIZE:%{size_download}\n" "https://poligonium.com/$path"
+    done
 done
 
 echo
