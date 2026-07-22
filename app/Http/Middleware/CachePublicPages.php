@@ -93,7 +93,13 @@ class CachePublicPages
             return false;
         }
 
-        foreach (['<form', 'name="_token"', "name='_token'", 'csrf-token', 'data-no-page-cache'] as $needle) {
+        foreach (['<form', 'name="_token"', "name='_token'", 'csrf-token'] as $needle) {
+            if (stripos($content, $needle) !== false && ! $this->canStoreFormPage($request, $content)) {
+                return false;
+            }
+        }
+
+        foreach (['data-no-page-cache'] as $needle) {
             if (stripos($content, $needle) !== false) {
                 return false;
             }
@@ -124,5 +130,16 @@ class CachePublicPages
     private function isAuthenticated(): bool
     {
         return rescue(fn () => Auth::check(), false, report: false);
+    }
+
+    private function canStoreFormPage(Request $request, string $content): bool
+    {
+        $path = trim($request->path(), '/');
+
+        if (! in_array($path, ['', 'uk', 'en'], true)) {
+            return false;
+        }
+
+        return stripos($content, 'contact-form') !== false;
     }
 }

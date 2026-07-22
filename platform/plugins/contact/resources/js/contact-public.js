@@ -1,4 +1,15 @@
 $(() => {
+    let getCookie = function (name) {
+        const value = `; ${document.cookie}`
+        const parts = value.split(`; ${name}=`)
+
+        if (parts.length === 2) {
+            return decodeURIComponent(parts.pop().split(';').shift())
+        }
+
+        return ''
+    }
+
     let showError = function (message) {
         $('.contact-error-message').html(message).show()
     }
@@ -52,11 +63,21 @@ $(() => {
         $('.contact-success-message').html('').hide()
         $('.contact-error-message').html('').hide()
 
+        const formData = new FormData($form[0])
+        const xsrfToken = getCookie('XSRF-TOKEN')
+        const headers = {}
+
+        if (xsrfToken) {
+            formData.delete('_token')
+            headers['X-XSRF-TOKEN'] = xsrfToken
+        }
+
         $.ajax({
             type: 'POST',
             cache: false,
             url: $form.prop('action'),
-            data: new FormData($form[0]),
+            headers,
+            data: formData,
             contentType: false,
             processData: false,
             beforeSend: () => $button.addClass('button-loading'),

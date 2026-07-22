@@ -38,14 +38,17 @@ echo
 echo "== Page timings =="
 for pass in 1 2; do
     echo "-- pass $pass --"
-    for path in "" "portfolio" "vfx-showreel" "courses" "admin/login"; do
+    for path in "" "vfx-showreel" "courses" "projects/crm-system" "admin/login"; do
         curl -L -o /dev/null -s -w "/$path HTTP:%{http_code} TOTAL:%{time_total} SIZE:%{size_download}\n" "https://poligonium.com/$path"
     done
 done
 
 echo
 echo "== Optimization headers =="
-curl -I -L -s "https://poligonium.com/vfx-showreel" | grep -i "x-poligonium" || true
+for path in "" "vfx-showreel" "courses"; do
+    echo "-- /$path --"
+    curl -L -s -D - -o /dev/null "https://poligonium.com/$path" | grep -i "x-poligonium" || true
+done
 
 echo
 echo "== Recent Laravel errors =="
