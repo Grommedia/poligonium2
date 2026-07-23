@@ -4,6 +4,7 @@
     $homeUrl = $isEnglish ? url('/en') : BaseHelper::getHomepageUrl();
     $siteName = theme_option('site_name') ?: 'Poligonium.com';
     $year = now()->year;
+    $academyUrl = \Illuminate\Support\Facades\Route::has('academy.public.index') ? route('academy.public.index') : url($prefix . '/academy');
 
     $copy = $isEnglish ? [
         'tagline' => '3D production, school, and original projects that turn ideas into living visual stories.',
@@ -40,6 +41,7 @@
         ['label' => 'Services', 'url' => $homeUrl . '#services'],
         ['label' => '3D Characters', 'url' => url($prefix . '/projects')],
         ['label' => 'VFX Showreel', 'url' => url($prefix . '/vfx-showreel')],
+        ['label' => '3D Academy', 'url' => $academyUrl],
         ['label' => 'Courses', 'url' => url($prefix . '/courses')],
         ['label' => 'Our Projects', 'url' => route('campaigns.public.index')],
         ['label' => 'Contacts', 'url' => $homeUrl . '#contact'],
@@ -48,6 +50,7 @@
         ['label' => 'Послуги', 'url' => $homeUrl . '#services'],
         ['label' => '3D персонажі', 'url' => url('/projects')],
         ['label' => 'VFX Showreel', 'url' => url('/vfx-showreel')],
+        ['label' => 'Академія 3D', 'url' => $academyUrl],
         ['label' => 'Курси', 'url' => url('/courses')],
         ['label' => 'Наші проєкти', 'url' => route('campaigns.public.index')],
         ['label' => 'Контакти', 'url' => $homeUrl . '#contact'],
