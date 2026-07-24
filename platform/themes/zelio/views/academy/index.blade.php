@@ -10,7 +10,7 @@
         ? [
             'kicker' => '3D Modeling Academy',
             'title' => 'Create what you imagine',
-            'headline_phrases' => ['Create what you imagine', 'Do you already imagine it?'],
+            'headline_phrases' => ['Create what you imagine', 'Can you imagine it?', 'So, did you see it?', 'Then start creating!'],
             'lead' => 'Practical training in 3D modeling, characters, animation and VFX from real industry practice.',
             'courses' => 'Courses',
             'showreel' => 'Watch showreel',
@@ -29,7 +29,7 @@
         : [
             'kicker' => 'Академія 3D-моделювання',
             'title' => 'Створюй те, що уявляєш',
-            'headline_phrases' => ['Створюй те, що уявляєш', 'А ти вже уявляєш?'],
+            'headline_phrases' => ['Створюй те, що уявляєш', 'Ти уявляєш?', 'Ну що, уявив?', 'Ну то давай створюй!'],
             'lead' => 'Практичне навчання 3D-моделювання, персонажів, анімації та VFX від практики індустрії.',
             'courses' => 'Курси',
             'showreel' => 'Дивитися шоу-ріл',
