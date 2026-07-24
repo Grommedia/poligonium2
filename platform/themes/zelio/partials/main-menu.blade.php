@@ -22,32 +22,37 @@
             'url' => $academyEnabled && \Illuminate\Support\Facades\Route::has('academy.public.articles') ? route('academy.public.articles') : url('/academy/articles'),
         ],
     ];
+    $academyRendered = false;
 @endphp
 
 <ul{!! BaseHelper::clean($options) !!}>
-    @if($academyEnabled)
-        <li @class(['nav-item has-children poligonium-academy-menu', 'active' => $academyActive])>
-            <a @class(['nav-link', 'active' => $academyActive]) href="{{ route('academy.public.index') }}">
-                {{ $isEnglish ? '3D Academy' : 'Академія 3D' }}
-            </a>
-            <ul class="sub-menu">
-                @foreach($academyItems as $academyItem)
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ $academyItem['url'] }}">{{ $academyItem['label'] }}</a>
-                    </li>
-                @endforeach
-            </ul>
-        </li>
-    @endif
-
     @foreach($menu_nodes as $key => $row)
         @php
+            $rowUrl = (string) $row->url;
             $rowPath = parse_url($row->url, PHP_URL_PATH) ?: $row->url;
             $rowPath = '/' . trim(preg_replace('#^/(en|uk|ru)(?=/|$)#', '', $rowPath), '/');
+            $rowTitle = mb_strtolower(trim((string) $row->title));
+            $isContactRow = str_contains($rowUrl, '#contact') || str_contains($rowTitle, 'контакт') || str_contains($rowTitle, 'contact');
             $skipTopAcademyDuplicate = $academyEnabled && in_array($rowPath, ['/courses', '/support', '/academy', '/academy/articles'], true);
         @endphp
 
         @continue($skipTopAcademyDuplicate)
+
+        @if($academyEnabled && ! $academyRendered && $isContactRow)
+            <li @class(['nav-item has-children poligonium-academy-menu', 'active' => $academyActive])>
+                <a @class(['nav-link', 'active' => $academyActive]) href="{{ route('academy.public.index') }}">
+                    {{ $isEnglish ? '3D Academy' : 'Академія 3D' }}
+                </a>
+                <ul class="sub-menu">
+                    @foreach($academyItems as $academyItem)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ $academyItem['url'] }}">{{ $academyItem['label'] }}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </li>
+            @php $academyRendered = true; @endphp
+        @endif
 
         <li @class(['nav-item', 'has-children' => $row->has_child])>
             <a @class(['nav-link', 'active' => $row->active, $row->css_class]) href="{{ $row->url }}" target="{{ $row->target }}">
@@ -65,4 +70,19 @@
             @endif
         </li>
     @endforeach
+
+    @if($academyEnabled && ! $academyRendered)
+        <li @class(['nav-item has-children poligonium-academy-menu', 'active' => $academyActive])>
+            <a @class(['nav-link', 'active' => $academyActive]) href="{{ route('academy.public.index') }}">
+                {{ $isEnglish ? '3D Academy' : 'Академія 3D' }}
+            </a>
+            <ul class="sub-menu">
+                @foreach($academyItems as $academyItem)
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ $academyItem['url'] }}">{{ $academyItem['label'] }}</a>
+                    </li>
+                @endforeach
+            </ul>
+        </li>
+    @endif
 </ul>
