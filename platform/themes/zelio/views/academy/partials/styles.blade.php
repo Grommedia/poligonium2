@@ -149,7 +149,6 @@
         border-radius: 50%;
         background: linear-gradient(135deg, rgba(99, 102, 241, .34), rgba(255, 255, 255, .15));
         filter: blur(.2px);
-        animation: academySoftPulse 6s ease-in-out infinite;
     }
 
     .poligonium-academy-hero__visual img {
@@ -159,8 +158,8 @@
         height: auto;
         aspect-ratio: 1;
         object-fit: contain;
-        transform: translateY(-8px);
-        animation: academyFloatImage 7s ease-in-out infinite;
+        transform: none;
+        animation: none;
     }
 
     .poligonium-academy-hero__visual video {
@@ -171,8 +170,8 @@
         height: auto;
         aspect-ratio: 1;
         object-fit: contain;
-        transform: none;
-        animation: none;
+        transform: none !important;
+        animation: none !important;
     }
 
     .poligonium-academy-benefits {
@@ -567,16 +566,6 @@
         grid-column: 1 / -1;
         padding: 36px;
         color: #667085;
-    }
-
-    @keyframes academyFloatImage {
-        0%, 100% { transform: translateY(-8px); }
-        50% { transform: translateY(6px); }
-    }
-
-    @keyframes academySoftPulse {
-        0%, 100% { transform: scale(1); opacity: .78; }
-        50% { transform: scale(1.035); opacity: .92; }
     }
 
     html[data-bs-theme="dark"] .poligonium-academy-page {
