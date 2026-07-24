@@ -110,7 +110,9 @@
             </div>
 
             <div class="poligonium-academy-hero__visual">
-                <img src="{{ $academyAsset('academy-hero.svg') }}" alt="{{ $copy['title'] }}">
+                <video autoplay muted loop playsinline preload="metadata" poster="{{ $academyAsset('academy-hero.svg') }}" aria-label="{{ $copy['title'] }}">
+                    <source src="{{ $academyAsset('academy-hero-animation.webm') }}" type="video/webm">
+                </video>
             </div>
         </div>
 

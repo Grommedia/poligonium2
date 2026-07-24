@@ -152,11 +152,14 @@
         animation: academySoftPulse 6s ease-in-out infinite;
     }
 
-    .poligonium-academy-hero__visual img {
+    .poligonium-academy-hero__visual img,
+    .poligonium-academy-hero__visual video {
         position: relative;
         z-index: 1;
-        width: min(100%, 820px);
+        width: min(100%, 720px);
         height: auto;
+        aspect-ratio: 1;
+        object-fit: contain;
         transform: translateY(-8px);
         animation: academyFloatImage 7s ease-in-out infinite;
     }
@@ -615,7 +618,8 @@
             margin-top: -20px;
         }
 
-        .poligonium-academy-hero__visual img {
+        .poligonium-academy-hero__visual img,
+        .poligonium-academy-hero__visual video {
             width: min(100%, 680px);
         }
 
