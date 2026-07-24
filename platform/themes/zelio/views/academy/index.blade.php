@@ -10,6 +10,7 @@
         ? [
             'kicker' => '3D Modeling Academy',
             'title' => 'Create what you imagine',
+            'headline_phrases' => ['Create what you imagine', 'Do you already imagine it?'],
             'lead' => 'Practical training in 3D modeling, characters, animation and VFX from real industry practice.',
             'courses' => 'Courses',
             'showreel' => 'Watch showreel',
@@ -28,6 +29,7 @@
         : [
             'kicker' => 'Академія 3D-моделювання',
             'title' => 'Створюй те, що уявляєш',
+            'headline_phrases' => ['Створюй те, що уявляєш', 'А ти вже уявляєш?'],
             'lead' => 'Практичне навчання 3D-моделювання, персонажів, анімації та VFX від практики індустрії.',
             'courses' => 'Курси',
             'showreel' => 'Дивитися шоу-ріл',
@@ -152,7 +154,13 @@
         <div class="poligonium-academy-hero">
             <div class="poligonium-academy-hero__copy">
                 <p class="poligonium-academy-kicker">{{ $copy['kicker'] }}</p>
-                <h1>{{ $copy['title'] }}</h1>
+                <h1 class="poligonium-academy-typewriter-title">
+                    <span
+                        class="poligonium-academy-typewriter"
+                        data-academy-typewriter
+                        data-phrases='@json($copy['headline_phrases'], JSON_UNESCAPED_UNICODE)'
+                    >{{ $copy['title'] }}</span><span class="poligonium-academy-typewriter__cursor" aria-hidden="true"></span>
+                </h1>
                 <p>{{ $copy['lead'] }}</p>
                 <div class="poligonium-academy-actions">
                     <a class="poligonium-academy-button is-primary" href="{{ $coursesUrl }}">
@@ -266,3 +274,53 @@
 </section>
 
 @include('theme.zelio::views.academy.partials.styles')
+
+<script>
+    (() => {
+        const headline = document.querySelector('[data-academy-typewriter]');
+
+        if (!headline || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return;
+        }
+
+        const phrases = JSON.parse(headline.dataset.phrases || '[]').filter(Boolean);
+
+        if (phrases.length < 2) {
+            return;
+        }
+
+        let phraseIndex = 0;
+        let charIndex = phrases[0].length;
+        let isDeleting = true;
+
+        const write = () => {
+            const phrase = phrases[phraseIndex];
+
+            headline.textContent = phrase.slice(0, charIndex);
+
+            if (isDeleting) {
+                if (charIndex > 0) {
+                    charIndex--;
+                    window.setTimeout(write, 28);
+                    return;
+                }
+
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                window.setTimeout(write, 260);
+                return;
+            }
+
+            if (charIndex < phrase.length) {
+                charIndex++;
+                window.setTimeout(write, 48);
+                return;
+            }
+
+            isDeleting = true;
+            window.setTimeout(write, 1500);
+        };
+
+        window.setTimeout(write, 1500);
+    })();
+</script>

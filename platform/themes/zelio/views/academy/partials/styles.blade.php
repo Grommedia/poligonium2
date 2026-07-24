@@ -100,6 +100,43 @@
         line-height: 1.04;
     }
 
+    .poligonium-academy-typewriter-title {
+        min-height: 2.08em;
+    }
+
+    .poligonium-academy-typewriter {
+        display: inline-block;
+    }
+
+    .poligonium-academy-typewriter__cursor {
+        display: inline-block;
+        width: .08em;
+        height: .82em;
+        margin-left: .08em;
+        border-radius: 999px;
+        background: var(--academy-primary);
+        vertical-align: -.06em;
+        animation: poligoniumAcademyCursor .86s steps(1) infinite;
+    }
+
+    @keyframes poligoniumAcademyCursor {
+        0%,
+        48% {
+            opacity: 1;
+        }
+
+        49%,
+        100% {
+            opacity: .12;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .poligonium-academy-typewriter__cursor {
+            animation: none;
+        }
+    }
+
     .poligonium-academy-hero__copy > p:not(.poligonium-academy-kicker) {
         max-width: 560px;
         margin: 24px 0 0;
