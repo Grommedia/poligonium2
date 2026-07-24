@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 250">
+  <defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f3f0ff"/><stop offset="1" stop-color="#fff7ed"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#111827" flood-opacity=".14"/></filter></defs>
+  <rect width="920" height="250" rx="24" fill="url(#bg)"/>
+  <g opacity=".35" stroke="#6366f1">
+    <path d="M52 48h816M52 98h816M52 148h816M52 198h816"/>
+    <path d="M102 24v202M202 24v202M302 24v202M402 24v202M502 24v202M602 24v202M702 24v202M802 24v202"/>
+  </g>
+  <g filter="url(#s)" transform="translate(595 18)">
+    <path d="M104 13 222 72l-19 121-133 20L12 112z" fill="#f8fafc"/>
+    <path d="M104 13 222 72l-108 58L12 112z" fill="#ffffff"/>
+    <path d="M114 130 222 72l-19 121-89 20z" fill="#d1d5db"/>
+    <path d="M12 112 114 130v83L70 213z" fill="#e5e7eb"/>
+    <circle cx="112" cy="130" r="38" fill="#f97316"/>
+    <circle cx="112" cy="130" r="20" fill="#fff7ed"/>
+  </g>
+</svg>

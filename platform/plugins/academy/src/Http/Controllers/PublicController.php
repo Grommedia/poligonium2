@@ -5,6 +5,7 @@ namespace Botble\Academy\Http\Controllers;
 use Botble\Academy\Models\AcademyArticle;
 use Botble\Academy\Models\AcademyCategory;
 use Botble\Base\Http\Controllers\BaseController;
+use Botble\Courses\Models\Course;
 use Botble\SeoHelper\Facades\SeoHelper;
 use Botble\Theme\Facades\AdminBar;
 use Botble\Theme\Facades\Theme;
@@ -34,7 +35,9 @@ class PublicController extends BaseController
             ->limit(6)
             ->get();
 
-        return Theme::scope('academy.index', compact('categories', 'featuredArticles', 'latestArticles'))->render();
+        $courses = $this->courseQuery()->limit(4)->get();
+
+        return Theme::scope('academy.index', compact('categories', 'featuredArticles', 'latestArticles', 'courses'))->render();
     }
 
     public function articles(): Response
@@ -117,5 +120,28 @@ class PublicController extends BaseController
             ->where(function ($query): void {
                 $query->whereNull('published_at')->orWhere('published_at', '<=', now());
             });
+    }
+
+    protected function courseQuery()
+    {
+        return Course::query()
+            ->with('category')
+            ->where('status', 'published')
+            ->where(function ($query): void {
+                $query
+                    ->whereNull('publication_state')
+                    ->orWhere('publication_state', 'published')
+                    ->orWhere(function ($query): void {
+                        $query
+                            ->where('publication_state', 'scheduled')
+                            ->where('publish_scheduled_at', '<=', now());
+                    });
+            })
+            ->where(function ($query): void {
+                $query->whereNull('visibility_mode')->orWhere('visibility_mode', 'catalog');
+            })
+            ->orderByDesc('is_featured')
+            ->orderBy('order')
+            ->latest();
     }
 }

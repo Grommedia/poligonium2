@@ -3,15 +3,13 @@
         position: relative;
         overflow: hidden;
         min-height: 100vh;
-        padding: 118px 0 80px;
+        padding: 96px 0 70px;
+        color: #111827;
         background:
-            linear-gradient(rgba(37, 99, 235, .08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(37, 99, 235, .08) 1px, transparent 1px),
-            radial-gradient(circle at 18% 12%, rgba(249, 115, 22, .16), transparent 28%),
-            radial-gradient(circle at 82% 22%, rgba(22, 163, 74, .12), transparent 30%),
-            #f7f8fb;
-        background-size: 32px 32px, 32px 32px, auto, auto, auto;
-        color: #161922;
+            linear-gradient(rgba(37, 99, 235, .055) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(37, 99, 235, .055) 1px, transparent 1px),
+            #fbfcff;
+        background-size: 32px 32px;
     }
 
     .poligonium-academy-page::before {
@@ -20,331 +18,448 @@
         inset: 0;
         pointer-events: none;
         background:
-            linear-gradient(115deg, transparent 0 46%, rgba(255, 255, 255, .7) 48%, transparent 52%),
-            repeating-linear-gradient(135deg, transparent 0 18px, rgba(17, 24, 39, .035) 19px 20px);
-        opacity: .55;
+            radial-gradient(circle at 72% 9%, rgba(99, 102, 241, .15), transparent 25%),
+            radial-gradient(circle at 58% 53%, rgba(249, 115, 22, .10), transparent 28%),
+            linear-gradient(180deg, rgba(255, 255, 255, .72), rgba(255, 255, 255, .2));
     }
 
     .poligonium-academy-wrap {
         position: relative;
         z-index: 1;
-        width: min(1560px, calc(100% - 56px));
+        width: min(1560px, calc(100% - 70px));
         margin: 0 auto;
     }
 
     .poligonium-academy-hero {
         display: grid;
-        grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr);
-        gap: 28px;
-        align-items: stretch;
-        margin-bottom: 28px;
+        grid-template-columns: minmax(0, .86fr) minmax(420px, 1fr);
+        gap: 36px;
+        align-items: center;
+        min-height: 520px;
     }
 
     .poligonium-academy-hero__copy {
-        position: relative;
-        overflow: hidden;
-        min-height: 390px;
-        padding: 46px;
-        border: 1px solid rgba(17, 24, 39, .14);
-        border-radius: 18px;
-        background: rgba(255, 255, 255, .74);
-        box-shadow: 0 22px 60px rgba(15, 23, 42, .09);
-        backdrop-filter: blur(16px);
-    }
-
-    .poligonium-academy-hero__copy::after,
-    .poligonium-academy-panel::after {
-        content: "";
-        position: absolute;
-        inset: auto -15% -35% auto;
-        width: 310px;
-        height: 310px;
-        border: 1px solid rgba(37, 99, 235, .16);
-        transform: rotate(18deg);
-        animation: academyFloat 7s ease-in-out infinite;
+        padding: 26px 0 34px;
     }
 
     .poligonium-academy-kicker {
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        margin: 0 0 18px;
-        color: #2563eb;
+        margin: 0 0 20px;
+        color: #4f46e5;
         font-size: 13px;
-        font-weight: 800;
+        font-weight: 900;
         text-transform: uppercase;
         letter-spacing: 0;
     }
 
     .poligonium-academy-kicker::before {
         content: "";
-        width: 30px;
+        width: 22px;
         height: 2px;
-        background: #f97316;
+        border-radius: 999px;
+        background: #4f46e5;
     }
 
     .poligonium-academy-hero h1 {
-        max-width: 760px;
+        max-width: 620px;
         margin: 0;
-        color: #111827;
-        font-size: clamp(42px, 5vw, 82px);
-        line-height: .92;
+        color: #101827;
+        font-size: clamp(48px, 5.5vw, 86px);
+        line-height: .98;
         letter-spacing: 0;
     }
 
     .poligonium-academy-hero p {
-        max-width: 760px;
+        max-width: 560px;
         margin: 24px 0 0;
-        color: rgba(17, 24, 39, .72);
-        font-size: 18px;
-        line-height: 1.65;
+        color: #596174;
+        font-size: 17px;
+        line-height: 1.58;
     }
 
     .poligonium-academy-actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 14px;
         margin-top: 30px;
     }
 
-    .poligonium-academy-button {
+    .poligonium-academy-button,
+    .poligonium-academy-link {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 46px;
-        padding: 0 20px;
-        border: 1px solid rgba(17, 24, 39, .18);
-        border-radius: 999px;
+        gap: 9px;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 10px;
         color: #111827;
-        font-weight: 800;
-        background: rgba(255, 255, 255, .78);
-        transition: transform .2s ease, border-color .2s ease, background .2s ease;
+        font-weight: 850;
+        line-height: 1;
+        letter-spacing: 0;
+        transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease, background .22s ease;
     }
 
-    .poligonium-academy-button:hover {
-        transform: translateY(-2px);
-        border-color: #f97316;
-        background: #fff;
-        color: #111827;
+    .poligonium-academy-button {
+        border: 1px solid rgba(15, 23, 42, .13);
+        background: rgba(255, 255, 255, .86);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, .05);
     }
 
     .poligonium-academy-button.is-primary {
         border-color: #111827;
         color: #fff;
         background: #111827;
+        box-shadow: 0 14px 32px rgba(17, 24, 39, .18);
     }
 
-    .poligonium-academy-panel {
-        position: relative;
-        overflow: hidden;
-        padding: 26px;
-        border: 1px solid rgba(17, 24, 39, .14);
-        border-radius: 18px;
-        background: rgba(255, 255, 255, .68);
-        box-shadow: 0 22px 60px rgba(15, 23, 42, .08);
-        backdrop-filter: blur(16px);
-    }
-
-    .poligonium-academy-panel__title {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        justify-content: space-between;
-        gap: 18px;
-        margin-bottom: 22px;
-    }
-
-    .poligonium-academy-panel__title strong {
-        display: block;
-        color: #111827;
-        font-size: 24px;
-        line-height: 1.12;
-    }
-
-    .poligonium-academy-panel__title span {
-        color: rgba(17, 24, 39, .55);
-        font-size: 13px;
-        font-weight: 800;
-        text-transform: uppercase;
-    }
-
-    .poligonium-academy-routes,
-    .poligonium-academy-categories {
-        position: relative;
-        z-index: 1;
-        display: grid;
-        gap: 12px;
-    }
-
-    .poligonium-academy-route,
-    .poligonium-academy-category {
-        display: grid;
-        grid-template-columns: 42px 1fr;
-        gap: 14px;
-        align-items: center;
-        padding: 16px;
-        border: 1px solid rgba(17, 24, 39, .12);
-        border-radius: 14px;
-        color: #111827;
-        background:
-            linear-gradient(rgba(17, 24, 39, .04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(17, 24, 39, .04) 1px, transparent 1px),
-            rgba(255, 255, 255, .66);
-        background-size: 18px 18px;
-        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-    }
-
-    .poligonium-academy-route:hover,
-    .poligonium-academy-category:hover {
-        transform: translateX(4px);
-        border-color: rgba(249, 115, 22, .52);
-        box-shadow: 0 16px 32px rgba(15, 23, 42, .08);
+    .poligonium-academy-button:hover,
+    .poligonium-academy-link:hover {
+        transform: translateY(-2px);
         color: #111827;
     }
 
-    .poligonium-academy-route i,
-    .poligonium-academy-category i {
+    .poligonium-academy-button.is-primary:hover {
+        color: #fff;
+        background: #0b1220;
+    }
+
+    .poligonium-academy-link {
+        min-height: auto;
+        padding: 0;
+        color: #4f46e5;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .poligonium-academy-hero__visual {
+        position: relative;
         display: grid;
         place-items: center;
-        width: 42px;
-        height: 42px;
+        min-height: 500px;
+    }
+
+    .poligonium-academy-hero__visual::before {
+        content: "";
+        position: absolute;
+        width: min(78%, 570px);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(99, 102, 241, .34), rgba(255, 255, 255, .15));
+        filter: blur(.2px);
+        animation: academySoftPulse 6s ease-in-out infinite;
+    }
+
+    .poligonium-academy-hero__visual img {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 820px);
+        height: auto;
+        transform: translateY(-8px);
+        animation: academyFloatImage 7s ease-in-out infinite;
+    }
+
+    .poligonium-academy-benefits {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 28px;
+        margin-top: 8px;
+    }
+
+    .poligonium-academy-benefits article {
+        display: grid;
+        grid-template-columns: 52px 1fr;
+        gap: 14px;
+        align-items: center;
+        min-height: 104px;
+        padding: 20px;
+        border: 1px solid rgba(79, 70, 229, .11);
         border-radius: 12px;
-        color: #fff;
-        background: #111827;
-        font-size: 21px;
+        background: rgba(255, 255, 255, .82);
+        box-shadow: 0 16px 42px rgba(15, 23, 42, .055);
+        transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
     }
 
-    .poligonium-academy-route strong,
-    .poligonium-academy-category strong {
+    .poligonium-academy-benefits article:hover {
+        transform: translateY(-4px);
+        border-color: rgba(79, 70, 229, .28);
+        box-shadow: 0 24px 52px rgba(15, 23, 42, .09);
+    }
+
+    .poligonium-academy-benefits i {
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        color: #4f46e5;
+        background: #eef2ff;
+        font-size: 23px;
+    }
+
+    .poligonium-academy-benefits strong {
         display: block;
-        font-size: 16px;
-        line-height: 1.2;
+        color: #161b28;
+        font-size: 15px;
+        line-height: 1.25;
     }
 
-    .poligonium-academy-route span,
-    .poligonium-academy-category span {
+    .poligonium-academy-benefits span {
         display: block;
         margin-top: 4px;
-        color: rgba(17, 24, 39, .6);
+        color: #6b7280;
         font-size: 13px;
         line-height: 1.35;
     }
 
     .poligonium-academy-section {
-        margin-top: 34px;
+        margin-top: 42px;
+    }
+
+    .poligonium-academy-section.is-courses {
+        margin-top: 44px;
     }
 
     .poligonium-academy-section__head {
         display: flex;
-        align-items: end;
+        align-items: center;
         justify-content: space-between;
         gap: 20px;
-        margin-bottom: 18px;
+        margin-bottom: 20px;
     }
 
     .poligonium-academy-section__head h2 {
         margin: 0;
-        color: #111827;
-        font-size: clamp(28px, 3vw, 44px);
+        color: #101827;
+        font-size: clamp(27px, 2.6vw, 38px);
         line-height: 1;
         letter-spacing: 0;
     }
 
     .poligonium-academy-section__head p {
-        max-width: 620px;
+        max-width: 650px;
         margin: 8px 0 0;
-        color: rgba(17, 24, 39, .68);
+        color: #667085;
         line-height: 1.55;
     }
 
+    .poligonium-academy-course-grid,
     .poligonium-academy-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 28px;
     }
 
+    .poligonium-academy-course-card,
     .poligonium-academy-card {
         position: relative;
         overflow: hidden;
-        display: flex;
-        min-height: 330px;
-        padding: 22px;
-        border: 1px solid rgba(17, 24, 39, .14);
-        border-radius: 18px;
+        display: grid;
+        min-height: 360px;
+        border: 1px solid rgba(15, 23, 42, .10);
+        border-radius: 14px;
         color: #111827;
-        background:
-            linear-gradient(rgba(37, 99, 235, .055) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(37, 99, 235, .055) 1px, transparent 1px),
-            rgba(255, 255, 255, .8);
-        background-size: 22px 22px;
-        box-shadow: 0 18px 48px rgba(15, 23, 42, .07);
-        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        background: rgba(255, 255, 255, .9);
+        box-shadow: 0 18px 42px rgba(15, 23, 42, .07);
+        transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
     }
 
+    .poligonium-academy-course-card:hover,
     .poligonium-academy-card:hover {
         transform: translateY(-6px);
-        border-color: rgba(249, 115, 22, .58);
-        box-shadow: 0 26px 70px rgba(15, 23, 42, .13);
+        border-color: rgba(79, 70, 229, .28);
+        box-shadow: 0 26px 60px rgba(15, 23, 42, .12);
         color: #111827;
     }
 
+    .poligonium-academy-course-card::after,
     .poligonium-academy-card::after {
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(110deg, transparent 10%, rgba(255, 255, 255, .75) 35%, transparent 58%);
-        transform: translateX(-120%);
-        transition: transform .7s ease;
         pointer-events: none;
+        background: linear-gradient(110deg, transparent 8%, rgba(255, 255, 255, .72) 38%, transparent 58%);
+        transform: translateX(-120%);
+        transition: transform .72s ease;
     }
 
+    .poligonium-academy-course-card:hover::after,
     .poligonium-academy-card:hover::after {
         transform: translateX(120%);
     }
 
-    .poligonium-academy-card__body {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
+    .poligonium-academy-course-card__image,
     .poligonium-academy-card__media {
-        height: 150px;
-        margin: -22px -22px 18px;
-        background: linear-gradient(135deg, #111827, #2563eb);
+        display: block;
+        height: 178px;
+        background: #f7f8ff;
     }
 
+    .poligonium-academy-course-card__image img,
     .poligonium-academy-card__media img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
-    .poligonium-academy-card__meta {
+    .poligonium-academy-course-card__body,
+    .poligonium-academy-card__body {
+        position: relative;
+        z-index: 1;
         display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 14px;
-        color: rgba(17, 24, 39, .62);
-        font-size: 12px;
-        font-weight: 800;
-        text-transform: uppercase;
+        flex-direction: column;
+        padding: 22px;
     }
 
+    .poligonium-academy-course-card__body strong,
     .poligonium-academy-card h3 {
         margin: 0;
         color: #111827;
-        font-size: 24px;
+        font-size: 20px;
+        line-height: 1.18;
+        letter-spacing: 0;
+    }
+
+    .poligonium-academy-course-card__body > span,
+    .poligonium-academy-card p {
+        display: block;
+        margin: 12px 0 20px;
+        color: #606a7d;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .poligonium-academy-course-card__body em {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: auto;
+        color: #475569;
+        font-style: normal;
+        font-size: 13px;
+        font-weight: 800;
+    }
+
+    .poligonium-academy-course-card__body small {
+        padding: 7px 10px;
+        border-radius: 999px;
+        color: #4f46e5;
+        background: #eef2ff;
+        font-size: 12px;
+        font-weight: 850;
+    }
+
+    .poligonium-academy-service-strip {
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: minmax(0, .9fr) minmax(380px, .75fr);
+        align-items: center;
+        min-height: 210px;
+        margin-top: 28px;
+        padding: 30px 44px;
+        border: 1px solid rgba(79, 70, 229, .12);
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(238, 242, 255, .96), rgba(255, 247, 237, .9));
+        box-shadow: 0 18px 46px rgba(15, 23, 42, .06);
+    }
+
+    .poligonium-academy-service-strip h2 {
+        max-width: 700px;
+        margin: 0;
+        color: #111827;
+        font-size: clamp(28px, 2.8vw, 42px);
         line-height: 1.08;
         letter-spacing: 0;
     }
 
-    .poligonium-academy-card p {
-        margin: 14px 0 18px;
-        color: rgba(17, 24, 39, .68);
+    .poligonium-academy-service-strip p {
+        max-width: 640px;
+        margin: 12px 0 22px;
+        color: #596174;
         line-height: 1.55;
+    }
+
+    .poligonium-academy-service-strip img {
+        position: absolute;
+        right: -2%;
+        bottom: -22%;
+        width: min(48%, 590px);
+        height: auto;
+        pointer-events: none;
+    }
+
+    .poligonium-academy-proof {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 28px;
+        border: 1px solid rgba(15, 23, 42, .10);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, .86);
+        box-shadow: 0 14px 34px rgba(15, 23, 42, .045);
+    }
+
+    .poligonium-academy-proof span {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 10px;
+        align-items: center;
+        min-height: 92px;
+        padding: 18px 24px;
+        border-right: 1px solid rgba(15, 23, 42, .09);
+    }
+
+    .poligonium-academy-proof span:last-child {
+        border-right: 0;
+    }
+
+    .poligonium-academy-proof i {
+        display: grid;
+        place-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 9px;
+        color: #4f46e5;
+        background: #eef2ff;
+        font-size: 19px;
+    }
+
+    .poligonium-academy-proof strong {
+        display: block;
+        color: #111827;
+        font-size: 16px;
+        line-height: 1.1;
+    }
+
+    .poligonium-academy-proof em {
+        display: block;
+        margin-top: 4px;
+        color: #667085;
+        font-size: 12px;
+        font-style: normal;
+        line-height: 1.3;
+    }
+
+    .poligonium-academy-card {
+        min-height: 330px;
+    }
+
+    .poligonium-academy-card__media {
+        margin: 0;
+    }
+
+    .poligonium-academy-card__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 12px;
+        color: #4f46e5;
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
     }
 
     .poligonium-academy-tags {
@@ -356,10 +471,10 @@
 
     .poligonium-academy-tags span {
         padding: 6px 10px;
-        border: 1px solid rgba(17, 24, 39, .12);
+        border: 1px solid rgba(79, 70, 229, .12);
         border-radius: 999px;
-        background: rgba(255, 255, 255, .7);
-        color: rgba(17, 24, 39, .72);
+        background: #f5f7ff;
+        color: #4f46e5;
         font-size: 12px;
         font-weight: 800;
     }
@@ -369,12 +484,18 @@
         margin: 0 auto;
     }
 
+    .poligonium-academy-article__hero,
+    .poligonium-academy-content,
+    .poligonium-academy-cta,
+    .poligonium-academy-empty {
+        border: 1px solid rgba(15, 23, 42, .10);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, .88);
+        box-shadow: 0 16px 42px rgba(15, 23, 42, .055);
+    }
+
     .poligonium-academy-article__hero {
         padding: 42px;
-        border: 1px solid rgba(17, 24, 39, .14);
-        border-radius: 18px;
-        background: rgba(255, 255, 255, .82);
-        box-shadow: 0 22px 60px rgba(15, 23, 42, .08);
     }
 
     .poligonium-academy-article__hero h1 {
@@ -388,7 +509,7 @@
     .poligonium-academy-article__hero p {
         max-width: 760px;
         margin: 0;
-        color: rgba(17, 24, 39, .7);
+        color: #596174;
         font-size: 18px;
         line-height: 1.6;
     }
@@ -396,9 +517,6 @@
     .poligonium-academy-content {
         margin-top: 24px;
         padding: 42px;
-        border: 1px solid rgba(17, 24, 39, .12);
-        border-radius: 18px;
-        background: rgba(255, 255, 255, .88);
         color: #20242f;
         font-size: 18px;
         line-height: 1.75;
@@ -412,7 +530,7 @@
     }
 
     .poligonium-academy-content a {
-        color: #2563eb;
+        color: #4f46e5;
         font-weight: 800;
     }
 
@@ -424,13 +542,6 @@
         gap: 18px;
         margin-top: 24px;
         padding: 24px;
-        border: 1px solid rgba(249, 115, 22, .35);
-        border-radius: 18px;
-        background:
-            linear-gradient(rgba(249, 115, 22, .07) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(249, 115, 22, .07) 1px, transparent 1px),
-            rgba(255, 255, 255, .82);
-        background-size: 20px 20px;
     }
 
     .poligonium-academy-cta strong {
@@ -441,83 +552,137 @@
     .poligonium-academy-empty {
         grid-column: 1 / -1;
         padding: 36px;
-        border: 1px dashed rgba(17, 24, 39, .2);
-        border-radius: 18px;
-        background: rgba(255, 255, 255, .66);
-        color: rgba(17, 24, 39, .68);
+        color: #667085;
     }
 
-    @keyframes academyFloat {
-        0%, 100% {
-            transform: translateY(0) rotate(18deg);
-        }
-        50% {
-            transform: translateY(-12px) rotate(12deg);
-        }
+    @keyframes academyFloatImage {
+        0%, 100% { transform: translateY(-8px); }
+        50% { transform: translateY(6px); }
+    }
+
+    @keyframes academySoftPulse {
+        0%, 100% { transform: scale(1); opacity: .78; }
+        50% { transform: scale(1.035); opacity: .92; }
     }
 
     html[data-bs-theme="dark"] .poligonium-academy-page {
+        color: #111827;
         background:
-            linear-gradient(rgba(148, 163, 184, .08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(148, 163, 184, .08) 1px, transparent 1px),
-            #f7f8fb;
-        color: #161922;
+            linear-gradient(rgba(37, 99, 235, .055) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(37, 99, 235, .055) 1px, transparent 1px),
+            #fbfcff;
+        background-size: 32px 32px;
+    }
+
+    @media (max-width: 1199px) {
+        .poligonium-academy-wrap {
+            width: min(100% - 42px, 1180px);
+        }
+
+        .poligonium-academy-hero {
+            grid-template-columns: 1fr .95fr;
+            gap: 20px;
+        }
+
+        .poligonium-academy-benefits,
+        .poligonium-academy-course-grid,
+        .poligonium-academy-grid,
+        .poligonium-academy-proof {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .poligonium-academy-proof span:nth-child(2) {
+            border-right: 0;
+        }
     }
 
     @media (max-width: 991px) {
         .poligonium-academy-page {
-            padding: 92px 0 52px;
+            padding: 82px 0 50px;
         }
 
         .poligonium-academy-wrap {
             width: min(100% - 28px, 760px);
         }
 
-        .poligonium-academy-hero,
-        .poligonium-academy-grid {
+        .poligonium-academy-hero {
             grid-template-columns: 1fr;
-        }
-
-        .poligonium-academy-hero__copy,
-        .poligonium-academy-panel,
-        .poligonium-academy-article__hero,
-        .poligonium-academy-content {
-            padding: 24px;
-            border-radius: 14px;
-        }
-
-        .poligonium-academy-hero__copy {
             min-height: auto;
+        }
+
+        .poligonium-academy-hero__visual {
+            min-height: auto;
+            margin-top: -20px;
+        }
+
+        .poligonium-academy-hero__visual img {
+            width: min(100%, 680px);
+        }
+
+        .poligonium-academy-service-strip {
+            grid-template-columns: 1fr;
+            padding: 26px;
+        }
+
+        .poligonium-academy-service-strip img {
+            position: relative;
+            right: auto;
+            bottom: auto;
+            width: 100%;
+            margin: 6px 0 -22px;
         }
     }
 
     @media (max-width: 575px) {
         .poligonium-academy-page {
-            padding-top: 78px;
+            padding-top: 72px;
         }
 
         .poligonium-academy-wrap {
             width: min(100% - 20px, 520px);
         }
 
+        .poligonium-academy-hero h1 {
+            font-size: 42px;
+        }
+
         .poligonium-academy-actions,
-        .poligonium-academy-section__head {
+        .poligonium-academy-section__head,
+        .poligonium-academy-benefits,
+        .poligonium-academy-course-grid,
+        .poligonium-academy-grid,
+        .poligonium-academy-proof {
             display: grid;
-            align-items: start;
+            grid-template-columns: 1fr;
         }
 
         .poligonium-academy-button {
             width: 100%;
         }
 
-        .poligonium-academy-card {
-            min-height: 300px;
-            padding: 18px;
+        .poligonium-academy-benefits article,
+        .poligonium-academy-proof span {
+            min-height: 84px;
+            padding: 16px;
         }
 
+        .poligonium-academy-proof span {
+            border-right: 0;
+            border-bottom: 1px solid rgba(15, 23, 42, .09);
+        }
+
+        .poligonium-academy-proof span:last-child {
+            border-bottom: 0;
+        }
+
+        .poligonium-academy-course-card,
+        .poligonium-academy-card {
+            min-height: 310px;
+        }
+
+        .poligonium-academy-course-card__image,
         .poligonium-academy-card__media {
-            margin: -18px -18px 16px;
-            height: 132px;
+            height: 150px;
         }
     }
 </style>
