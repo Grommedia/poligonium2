@@ -5,8 +5,8 @@
         'read' => $isEnglish ? 'Read' : 'Читати',
         'minutes' => $isEnglish ? 'min read' : 'хв читання',
     ];
-    $arrowIcon = $icons['arrow'] ?? '→';
-    $fallbackImage = Theme::asset()->url('images/academy/course-modeling.svg');
+    $arrowIcon = $icons['arrow'] ?? null;
+    $fallbackImage = Theme::asset()->url('images/academy/visual/image-file-3d-pixel-icon.svg');
     $readingTime = $article->reading_time ?: 8;
 @endphp
 
@@ -19,7 +19,14 @@
         <p>{{ \Illuminate\Support\Str::limit(strip_tags((string) $article->description), 110) }}</p>
         <span class="poligonium-academy-card__read">
             <span>{{ $readingTime }} {{ $copy['minutes'] }}</span>
-            <span>{{ $copy['read'] }} {!! $arrowIcon !!}</span>
+            <span>
+                {{ $copy['read'] }}
+                @if ($arrowIcon)
+                    <span class="poligonium-academy-arrow-icon" style="--academy-icon: url('{{ $arrowIcon }}')" aria-hidden="true"></span>
+                @else
+                    →
+                @endif
+            </span>
         </span>
     </span>
 </a>

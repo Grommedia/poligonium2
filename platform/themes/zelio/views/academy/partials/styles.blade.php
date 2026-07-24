@@ -158,24 +158,24 @@
     }
 
     .poligonium-academy-button__icon,
-    .poligonium-academy-link svg {
+    .poligonium-academy-arrow-icon {
         display: inline-grid;
         place-items: center;
         width: 20px;
         height: 20px;
+        flex: 0 0 auto;
     }
 
-    .poligonium-academy-button svg,
-    .poligonium-academy-link svg,
-    .poligonium-academy-icon svg,
-    .poligonium-academy-card__read svg {
+    .poligonium-academy-button__icon::before,
+    .poligonium-academy-arrow-icon::before,
+    .poligonium-academy-icon::before {
+        content: "";
+        display: block;
         width: 100%;
         height: 100%;
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 1.8;
-        stroke-linecap: round;
-        stroke-linejoin: round;
+        background: currentColor;
+        mask: var(--academy-icon) center / contain no-repeat;
+        -webkit-mask: var(--academy-icon) center / contain no-repeat;
     }
 
     .poligonium-academy-hero__visual {
@@ -256,11 +256,6 @@
         background: #f1f3ff;
     }
 
-    .poligonium-academy-icon svg {
-        width: 23px;
-        height: 23px;
-    }
-
     .poligonium-academy-benefits strong {
         display: block;
         margin-top: 22px;
@@ -321,7 +316,7 @@
         white-space: nowrap;
     }
 
-    .poligonium-academy-link svg {
+    .poligonium-academy-link .poligonium-academy-arrow-icon {
         width: 18px;
         height: 18px;
     }
@@ -346,16 +341,20 @@
 
     .poligonium-academy-course-card__image {
         overflow: hidden;
+        position: relative;
         display: block;
         aspect-ratio: 16 / 10;
         border-radius: 16px;
-        background: #f2f5ff;
+        background:
+            radial-gradient(circle at 75% 22%, rgba(91, 97, 255, .16), transparent 34%),
+            linear-gradient(135deg, #f7f8ff, #ffffff);
     }
 
     .poligonium-academy-course-card__image img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
+        padding: 18px;
         transition: transform .35s ease;
     }
 
@@ -476,13 +475,16 @@
     .poligonium-academy-card__media {
         overflow: hidden;
         display: block;
-        background: #f2f5ff;
+        background:
+            radial-gradient(circle at 78% 20%, rgba(91, 97, 255, .15), transparent 34%),
+            linear-gradient(135deg, #f7f8ff, #ffffff);
     }
 
     .poligonium-academy-card__media img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
+        padding: 14px;
         transition: transform .35s ease;
     }
 
@@ -537,6 +539,11 @@
         align-items: center;
         gap: 6px;
         color: var(--academy-primary);
+    }
+
+    .poligonium-academy-card__read .poligonium-academy-arrow-icon {
+        width: 15px;
+        height: 15px;
     }
 
     html[data-bs-theme="dark"] .poligonium-academy-page {
